@@ -32,13 +32,13 @@ public class PlayerController : MonoBehaviour
         // Rotate 90 degrees to the left on 'A' key press
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            StartCoroutine(Rotate(-90f));
+            StartCoroutine(Rotate(RelativeDirection.LEFT));
         }
 
         // Rotate 90 degrees to the right on 'D' key press
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            StartCoroutine(Rotate(90f));
+            StartCoroutine(Rotate(RelativeDirection.RIGHT));
         }
     }
 
@@ -65,8 +65,9 @@ public class PlayerController : MonoBehaviour
         float elapsedTime = 0f;
         Vector3 startPosition = transform.position;
         Vector3 endPosition = transform.position + transform.forward;
-        Cell currentCell = LevelManager.getCell(transform.position);
-        Cell targetCell = LevelManager.getCell(transform.position+transform.forward);
+
+        Cell currentCell = LevelManager.getCell(startPosition);
+        Cell targetCell = LevelManager.getCell(endPosition);
 
 
         StartCoroutine(playerAudioHandler.PlayStepsForward(currentCell, targetCell));
@@ -84,13 +85,16 @@ public class PlayerController : MonoBehaviour
         isMoving = false;
     }
 
-    IEnumerator Rotate(float targetAngle)
+    IEnumerator Rotate(RelativeDirection direction)
     {
         isRotating = true;
 
         float elapsedTime = 0f;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = Quaternion.Euler(0f, targetAngle, 0f) * startRotation;
+        Quaternion endRotation = Quaternion.Euler(0f, direction.toRotationAngle(), 0f) * startRotation;
+
+        Cell currentCell = LevelManager.getCell(transform.position);
+        StartCoroutine(playerAudioHandler.PlayRotationSteps(currentCell,direction));
 
         while (elapsedTime < rotateDuration)
         {

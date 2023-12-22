@@ -17,4 +17,16 @@ public class PlayerAudioHandler : MonoBehaviour
         audioSource.PlayOneShot(step2);
     }
 
+    public IEnumerator PlayRotationSteps(Cell currentCell, RelativeDirection newForward)
+    {
+        AudioClip step1 = currentCell.getRandomStepSound();
+        AudioClip step2 = currentCell.getRandomStepSound();
+        audioSource.panStereo = newForward.toStereo();
+        audioSource.PlayOneShot(step1);
+        yield return new WaitForSeconds(0.3f);
+        audioSource.panStereo = 0f;
+        audioSource.PlayOneShot(step2);
+        audioSource.pitch = 1f;
+    }
+
 }

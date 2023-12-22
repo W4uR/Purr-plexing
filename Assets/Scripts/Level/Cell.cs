@@ -14,7 +14,7 @@ public class Cell : MonoBehaviour
         this.floorMaterial = floorMaterial;
     }
 
-    public void hideWall(Direction direction)
+    public void hideWall(AbsoluteDirection direction)
     {
         walls[((int)direction)].SetActive(false);
     }

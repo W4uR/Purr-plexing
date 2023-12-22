@@ -55,7 +55,7 @@ public class Level : MonoBehaviour
         //Removing walls
         foreach (var posCellPair in cells)
         {
-            foreach (Direction direction in Enum.GetValues(typeof(Direction)))
+            foreach (AbsoluteDirection direction in Enum.GetValues(typeof(AbsoluteDirection)))
             {
                 if (cells.ContainsKey(posCellPair.Key + direction.ToVector2Int()))
                 {
