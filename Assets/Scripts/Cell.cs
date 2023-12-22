@@ -18,4 +18,10 @@ public class Cell : MonoBehaviour
     {
         walls[((int)direction)].SetActive(false);
     }
+
+    public AudioClip getRandomStepSound()
+    {
+        int randomIndex = Random.Range(0, floorMaterial.stepSounds.Count);
+        return floorMaterial.stepSounds[randomIndex];
+    }
 }

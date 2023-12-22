@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 2pixel_1
+  m_Script: {fileID: 11500000, guid: 6c79e284fe8930f4cbe471abd7f99691, type: 3}
+  m_Name: Wood Floor
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 289848298, guid: 42a3e40f433ca70448bb460391f7996d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8d71d4837cec05f45abc9f898277bf5b, type: 3}
+  m_Color: {r: 1, g: 0.8626838, b: 0.41037738, a: 1}
   m_Transform:
     e00: 1
     e01: 0
@@ -34,3 +34,4 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
+  floorMaterial: {fileID: 11400000, guid: 2974e1c526e200140ba7d0dcfd5988e0, type: 2}
