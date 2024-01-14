@@ -8,7 +8,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    List<Level> levels;
+    Level[] levels;
 
     [SerializeField]
     Transform levelParent;
@@ -16,15 +16,20 @@ public class LevelManager : MonoBehaviour
     private int currentLevelIndex = 0;
     private static Level currentLevel = null;
 
+    public static event Action levelLoaded;
 
-    private void Start()
-    {
-        LoadLevel(currentLevelIndex);
-    }
-
-    public static Cell getCell(Vector3 worldPosition)
+    public static Cell GetCell(Vector3 worldPosition)
     {
         return currentLevel.GetCell(worldPosition);
+    }
+    public static int GetNumberOfCatsOnCurrentLevel()
+    {
+        return currentLevel.catsOnLevel;
+    }
+
+    public static Vector3 GetSpawnPosition()
+    {
+        return currentLevel.spawnPoint;
     }
 
     public void LoadLevel(int levelIndex)
@@ -35,7 +40,7 @@ public class LevelManager : MonoBehaviour
         }
         currentLevelIndex = levelIndex;
         currentLevel = levels[currentLevelIndex];
-        currentLevel.initialize(levelParent);
+        currentLevel.Initialize(levelParent);
+        levelLoaded.Invoke();
     }
-
 }

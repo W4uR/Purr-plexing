@@ -12,8 +12,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     PlayerAudioHandler playerAudioHandler;
 
+    [SerializeField]
+    LayerMask wallLayers;
+
     private bool isMoving = false;
     private bool isRotating = false;
+
+
+    private void OnEnable()
+    {
+        LevelManager.levelLoaded += TeleportToSpawn;
+    }
+
+    private void OnDisable()
+    {
+        LevelManager.levelLoaded -= TeleportToSpawn;
+    }
+
+    void TeleportToSpawn()
+    {
+        transform.position = LevelManager.GetSpawnPosition();
+        transform.rotation = Quaternion.FromToRotation(transform.forward, Vector3.forward);
+    }
 
     void Update()
     {
@@ -47,10 +67,10 @@ public class PlayerController : MonoBehaviour
     {
         // Cast a ray forward to check for obstacles
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, wallLayers, QueryTriggerInteraction.Ignore))
         {
             // If the ray hits something, movement is not valid
-            Debug.Log("Invalid Move: Obstacle detected!");
+            Debug.Log("Invalid Move: Obstacle detected! " + hit.transform.name);
             return false;
         }
 
@@ -66,8 +86,8 @@ public class PlayerController : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 endPosition = transform.position + transform.forward;
 
-        Cell currentCell = LevelManager.getCell(startPosition);
-        Cell targetCell = LevelManager.getCell(endPosition);
+        Cell currentCell = LevelManager.GetCell(startPosition);
+        Cell targetCell = LevelManager.GetCell(endPosition);
 
 
         StartCoroutine(playerAudioHandler.PlayStepsForward(currentCell, targetCell));
@@ -93,7 +113,7 @@ public class PlayerController : MonoBehaviour
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation = Quaternion.Euler(0f, direction.toRotationAngle(), 0f) * startRotation;
 
-        Cell currentCell = LevelManager.getCell(transform.position);
+        Cell currentCell = LevelManager.GetCell(transform.position);
         StartCoroutine(playerAudioHandler.PlayRotationSteps(currentCell,direction));
 
         while (elapsedTime < rotateDuration)

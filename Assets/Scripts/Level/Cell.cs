@@ -1,27 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cell : MonoBehaviour
 {
+    // A falakat sorrendje fontos!!! (Észak, Kelet, Dél, Nyugat)
+    [Header("Walls (N,E,S,W)")]
     [SerializeField]
-    GameObject[] walls;
+    private GameObject[] walls;
 
-    FloorMaterial floorMaterial;
+    private FloorMaterial floorMaterial;
 
+    /// <summary>
+    /// Beállít egy padló típust a mezõnek.
+    /// </summary>
+    /// <param name="floorMaterial">A beállítandó padló típus</param>
     public void SetFloorMaterial(FloorMaterial floorMaterial)
     {
         this.floorMaterial = floorMaterial;
     }
 
-    public void hideWall(AbsoluteDirection direction)
+    /// <summary>
+    /// Elrejti a paraméterben adott irányban lévõ falat.
+    /// </summary>
+    /// <param name="direction">Az elrejtendõ fal globális iránya</param>
+    public void HideWall(AbsoluteDirection direction)
     {
-        walls[((int)direction)].SetActive(false);
+        walls[(int)direction].SetActive(false);
     }
 
-    public AudioClip getRandomStepSound()
+    /// <summary>
+    /// Visszaad egy véletlenszerû lépéshangeffektet a padló típusának megfelelõen
+    /// </summary>
+    /// <returns></returns>
+    public AudioClip GetRandomStepSound()
     {
-        int randomIndex = Random.Range(0, floorMaterial.stepSounds.Count);
-        return floorMaterial.stepSounds[randomIndex];
+        return floorMaterial.GetRandomSound();
     }
 }

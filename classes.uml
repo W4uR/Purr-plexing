@@ -1,0 +1,58 @@
+@startuml
+class MonoBehaviour{}
+class Tile{}
+
+class layoutTile{
+ + FloorMaterial floorMaterial
+}
+
+class objectTile{
+ + GameObject[] objects;
+}
+
+class Cell{
+ - GameObject[] walls
+ - FloorMaterial floorMaterial
+ + void SetFloorMaterial(FloorMaterial fm)
+ + void HideWall(AbsoluteDirection d)
+ + AudioClip GetRandomStepSound()
+}
+
+enum AbsoluteDirection{
+ NORTH,
+ EAST,
+ SOUTH,
+ WEST
+ static Vector2Int ToVector2Int(this AbsoluteDirection d)
+}
+
+class FloorMaterial{
+ + AudioClip[] stepSounds
+ + AudioClip GetRandomSound()
+}
+
+class Level{
+ - Tilemap layoutMap
+ - Tilemap objectMap
+ - Cell cellPrefab
+ - Dictionary<Vector2Int, Cell> cells
+ + int catsOnLevel
+ + Vector3 spawnPoint
+ + Cell GetCell(Vector3 worldPosition)
+ + void Initialize(Transform parent)
+ - void GenerateLayout(Transform parent)
+ - void GenerateObjects()
+}
+
+class LevelManager{
+ - Level[] levels
+ - Transform levelParent
+ - int currentLevelIndex
+ - static Level currentLevel
+ + static event Action levelLoaded
+ + static Cell GetCell(Vecor3 worldPosition)
+ + static int GetNumberOfCatsOnCurrentLevel()
+ + static Vector3 GetSpawnPosition()
+ + void LoadLevel(int levelIndex)
+}
+@enduml

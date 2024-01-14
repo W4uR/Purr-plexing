@@ -5,42 +5,38 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
     [SerializeField]
-    AudioClip[] meows;
+    CustomAudioSource audioSource;
 
-    [SerializeField]
-    AudioSource audioSource;
+    public bool isCarried = false;
 
 
-    bool isCarried = false;
-
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        InvokeRepeating("PlayRandomMeow", 0, 5);
+        CatCaller.CallingCats += OnCallingCats;
     }
 
-    void PlayRandomMeow()
+    private void OnDisable()
     {
-        if(isCarried == false)
+        CatCaller.CallingCats -= OnCallingCats;
+    }
+
+    private void OnCallingCats(Vector3 callerPos)
+    {
+       // float distanceFromCaller = Vector3.Distance(callerPos, transform.position);
+        StartCoroutine(GiveSoundWithRandomDelay());
+    }
+
+
+    IEnumerator GiveSoundWithRandomDelay()
+    {
+        yield return new WaitForSeconds(Random.Range(1f, 2.3f));
+        if (isCarried == false)
         {
-            int randomIndex = Random.Range(0, meows.Length);
-            audioSource.PlayOneShot(meows[randomIndex]);
+            audioSource.PlayRandomFromGroup("meows", true);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else
         {
-            isCarried = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isCarried = false;
+            audioSource.PlayRandomFromGroup("purrs", false);
         }
     }
 }

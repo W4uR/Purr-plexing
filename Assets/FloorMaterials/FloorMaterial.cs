@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Floor Material", menuName = "Floor Material")]
 public class FloorMaterial : ScriptableObject
 {
-    public List<AudioClip> stepSounds;
+    public AudioClip[] stepSounds;
 
-    public AudioClip getRandomSound()
+    public AudioClip GetRandomSound()
     {
-        return stepSounds[Random.Range(0, stepSounds.Count)];
+        return stepSounds[Random.Range(0, stepSounds.Length)];
     }
 }
