@@ -7,6 +7,9 @@ public class Cat : MonoBehaviour
     [SerializeField]
     CustomAudioSource audioSource;
 
+    [SerializeField]
+    AudioSource purringSource;
+
     private bool isCarried = false;
 
     public void SetCarried(bool carried)
@@ -14,7 +17,7 @@ public class Cat : MonoBehaviour
         isCarried = carried;
         if (isCarried)
         {
-            audioSource.Stop();
+            purringSource.Stop();
         }
     }
 

@@ -27,6 +27,23 @@ public class CustomAudioSource : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (!source.isPlaying) return;
+
+
+        if (IsWallBetweenListener())
+        {
+            lowPassFilter.enabled = true;
+            source.volume = 0.7f;
+        }
+        else
+        {
+            lowPassFilter.enabled = false;
+            source.volume = 1f;
+        }
+    }
+
     public void PlayRandomFromGroup(string groupName, bool effects = false)
     {
         var group = GetGroupByName(groupName);
@@ -35,8 +52,7 @@ public class CustomAudioSource : MonoBehaviour
         // Do occlusion and reverb if effects==true
         if (effects)
         {
-            Vector3 dir = listener.position - transform.position;
-            if(Physics.Raycast(transform.position,dir, dir.magnitude, wall))
+            if(IsWallBetweenListener())
             {
                 Debug.Log("Wall between cat and player. Filter applied.");
                 lowPassFilter.enabled = true;
@@ -59,16 +75,9 @@ public class CustomAudioSource : MonoBehaviour
         return groups.Where(g => g.name.Equals(groupName)).First<AudioGroup>();
     }
 
-    public void Stop()
+    bool IsWallBetweenListener()
     {
-        source.Stop();
+        Vector3 dir = listener.position - transform.position;
+        return Physics.Raycast(transform.position, dir, dir.magnitude, wall);
     }
-
-    private void OnDrawGizmos()
-    {
-        //float distance = Vector3.Distance(transform.position, listener.transform.position);
-        //Gizmos.color = Physics.Raycast(transform.position, listener.transform.position - transform.position, distance, wall) ? Color.red : Color.green;
-        //Gizmos.DrawLine(transform.position, listener.transform.position);
-    }
-
 }
