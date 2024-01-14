@@ -7,8 +7,16 @@ public class Cat : MonoBehaviour
     [SerializeField]
     CustomAudioSource audioSource;
 
-    public bool isCarried = false;
+    private bool isCarried = false;
 
+    public void SetCarried(bool carried)
+    {
+        isCarried = carried;
+        if (isCarried)
+        {
+            audioSource.Stop();
+        }
+    }
 
     private void OnEnable()
     {
@@ -38,5 +46,11 @@ public class Cat : MonoBehaviour
         {
             audioSource.PlayRandomFromGroup("purrs", false);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1f, .64f, 0f);
+        Gizmos.DrawWireSphere(transform.position, .3f);
     }
 }

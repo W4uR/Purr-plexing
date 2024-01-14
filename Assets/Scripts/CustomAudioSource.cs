@@ -59,6 +59,11 @@ public class CustomAudioSource : MonoBehaviour
         return groups.Where(g => g.name.Equals(groupName)).First<AudioGroup>();
     }
 
+    public void Stop()
+    {
+        source.Stop();
+    }
+
     private void OnDrawGizmos()
     {
         //float distance = Vector3.Distance(transform.position, listener.transform.position);

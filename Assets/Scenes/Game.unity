@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 499225498}
   catPickupEffect: {fileID: 8300000, guid: d10dbe33b6418834391c4ad452c97a61, type: 3}
-  catSavedEffect: {fileID: 8300000, guid: 3cadf77a41d31074c88543fd6aab4089, type: 3}
+  catSavedEffect: {fileID: 8300000, guid: ac2b333716e44934483e3f48f0c0454b, type: 3}
   allCatsSavedEffect: {fileID: 8300000, guid: 6ffb336c1934556409c5108884ca1f31, type: 3}
   whistleForCatsEffect: {fileID: 8300000, guid: a00016e7a3c1d874792d081a9d58242e, type: 3}
 --- !u!82 &499225498

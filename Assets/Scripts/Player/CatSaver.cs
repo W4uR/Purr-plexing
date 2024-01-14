@@ -31,7 +31,7 @@ public class CatSaver : MonoBehaviour
     void AttachCat(Cat cat)
     {
         heldCats.Add(cat);
-        cat.isCarried = true;
+        cat.SetCarried(true);
         cat.transform.SetParent(transform, false);
         GlobalSoundEffects.Instance.PlayCatPickUp();
     }
@@ -45,7 +45,6 @@ public class CatSaver : MonoBehaviour
             Debug.Log("Every cat has been saved on this level.");
             GlobalSoundEffects.Instance.PlayAllCatsSaved();
             GameManager.Instance.LevelFinished();
-            return;
         }
         foreach (var cat in heldCats)
         {

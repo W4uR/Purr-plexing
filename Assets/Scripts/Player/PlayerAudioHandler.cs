@@ -5,41 +5,58 @@ using UnityEngine;
 
 public class PlayerAudioHandler : MonoBehaviour
 {
+    [Header("Steps")]
     [SerializeField]
     AudioSource stepsSource;
+
+    [Header("Breeze")]
     [SerializeField]
-    AudioSource windSource;
+    AudioSource LeftBreezeSource;
+    [SerializeField]
+    AudioSource RightBreezeSource;
+    [Range(1f, 50f)]
+    [SerializeField]
+    float breezeVolumeScale = 1f;
 
 
     private void FixedUpdate()
     {
-        HandleWindSound();
+        HandleBreezeAudio();
     }
 
-    void HandleWindSound()
+    void HandleBreezeAudio()
     {
-        windSource.panStereo = 0f;
-        bool shouldPlay = false;
+        // Jobb fül
+        Ray ray = new Ray(transform.position, transform.right);
+        RaycastHit hit;
+        if (Physics.Raycast(ray,out hit))
+        {
+            RightBreezeSource.volume = hit.distance / breezeVolumeScale;
+            if(hit.distance > 1f)
+            {
+                if (!RightBreezeSource.isPlaying)
+                    RightBreezeSource.Play();
+            }
+            else
+            {
+                RightBreezeSource.Pause();
+            }
+        }
 
-
-        if (!Physics.Raycast(windSource.transform.position, windSource.transform.right, 1f))
+        // Bal fül
+        ray = new Ray(transform.position, -transform.right);
+        if (Physics.Raycast(ray, out hit))
         {
-            windSource.panStereo += 1f;
-            shouldPlay = true;
-        }
-        if(!Physics.Raycast(windSource.transform.position, -windSource.transform.right, 1f))
-        {
-            windSource.panStereo -= 1f;
-            shouldPlay = true;
-        }
-        
-        if(shouldPlay && windSource.isPlaying == false)
-        {
-            windSource.Play();
-        }
-        else if(shouldPlay == false && windSource.isPlaying)
-        {
-            windSource.Pause();
+            LeftBreezeSource.volume = hit.distance / breezeVolumeScale;
+            if (hit.distance > 1f)
+            {
+                if (!LeftBreezeSource.isPlaying)
+                    LeftBreezeSource.Play();
+            }
+            else
+            {
+                LeftBreezeSource.Pause();
+            }
         }
 
     }
