@@ -34,10 +34,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
-        foreach (Transform cell in levelParent)
-        {
-            Destroy(cell.gameObject);
-        }
+
         currentLevelIndex = levelIndex;
         currentLevel = levels[currentLevelIndex];
         currentLevel.Initialize(levelParent);

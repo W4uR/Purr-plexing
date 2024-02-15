@@ -36,10 +36,19 @@ public class Level : MonoBehaviour
 
     public void Initialize(Transform parent = null)
     {
-        cells = new Dictionary<Vector2Int, Cell>();
-        catsOnLevel = 0;
+        ResetLevel(parent);
         GenerateLayout(parent);
         GenerateObjects();
+    }
+
+    private void ResetLevel(Transform parent)
+    {
+        cells = new Dictionary<Vector2Int, Cell>();
+        foreach (Transform cell in parent)
+        {
+            Destroy(cell.gameObject);
+        }
+        catsOnLevel = 0;
     }
 
     void GenerateLayout(Transform parent)

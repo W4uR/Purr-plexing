@@ -19,7 +19,7 @@ public class CatCaller : MonoBehaviour
         if (!canWhistle) return;
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine("Whistle");
+            StartCoroutine(nameof(Whistle));
         }
     }
 

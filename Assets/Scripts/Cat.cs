@@ -33,7 +33,6 @@ public class Cat : MonoBehaviour
 
     private void OnCallingCats(Vector3 callerPos)
     {
-       // float distanceFromCaller = Vector3.Distance(callerPos, transform.position);
         StartCoroutine(GiveSoundWithRandomDelay());
     }
 

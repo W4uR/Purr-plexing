@@ -44,18 +44,19 @@ public class PlayerController : MonoBehaviour
     {
         if (isMoving || isRotating) return;
 
+        // Mozgás elõre 'W' gomb vagy kurzorbillentyû megnyomásakor, ha a mozgás lehetséges
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && IsValidMove())
         {
             StartCoroutine(MoveForward());
         }
 
-        // Rotate 90 degrees to the left on 'A' key press
+        // 90 fok fordulás balra 'A' gomb vagy kurzorbillentyû megnyomásakor
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             StartCoroutine(Rotate(RelativeDirection.LEFT));
         }
 
-        // Rotate 90 degrees to the right on 'D' key press
+        // 90 fok fordulás jobbra 'D' gomb vagy kurzorbillentyû megnyomásakor
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             StartCoroutine(Rotate(RelativeDirection.RIGHT));
@@ -65,16 +66,16 @@ public class PlayerController : MonoBehaviour
 
     bool IsValidMove()
     {
-        // Cast a ray forward to check for obstacles
+        // Raycast elõre,hogy van-e ott fal
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit, 1f, wallLayers, QueryTriggerInteraction.Ignore))
         {
-            // If the ray hits something, movement is not valid
-            Debug.Log("Invalid Move: Obstacle detected! " + hit.transform.name);
+            // A mozgás nem lehetséges
+            Debug.Log("Invalid Move: Wall detected! " + hit.transform.name);
             return false;
         }
 
-        // Movement is valid if no obstacle is detected
+        // A mozgás lehetséges
         return true;
     }
 
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / stepDuration);
             elapsedTime += Time.deltaTime;
 
-            yield return new WaitForEndOfFrame(); // Wait for the next frame
+            yield return new WaitForEndOfFrame();
         }
 
         transform.position = endPosition;
