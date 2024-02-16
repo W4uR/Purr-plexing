@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 21903183872
-    m_Localized: "J\xE1t\xE9k ind\xEDt\xE1sa"
+    m_Localized: "Bevezet\u0151 J\xE1t\xE9k"
     m_Metadata:
       m_Items: []
   - m_Id: 145656123392
@@ -27,7 +27,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 189612429312
-    m_Localized: "Be\xE1ll\xEDt\xE1sok"
+    m_Localized: "Nyelv m\xF3dos\xEDt\xE1sa"
     m_Metadata:
       m_Items: []
   references:

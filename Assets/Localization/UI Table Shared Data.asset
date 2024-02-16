@@ -16,7 +16,7 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: ba9eb2e4d88a7e24b8af39b347223865
   m_Entries:
   - m_Id: 21903183872
-    m_Key: menu.play
+    m_Key: menu.play.tutorial
     m_Metadata:
       m_Items: []
   - m_Id: 145656123392
@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 189612429312
-    m_Key: menu.settings
+    m_Key: menu.change.language
     m_Metadata:
       m_Items: []
   m_Metadata:

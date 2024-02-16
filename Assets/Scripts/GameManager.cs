@@ -36,12 +36,12 @@ public class GameManager : Singleton<GameManager>
         Invoke(nameof(BackToMenu), 3f);
     }
 
-    internal void QuitGame()
+    public void QuitGame()
     {
         Application.Quit(0);
     }
 
-    internal void BackToMenu()
+    public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
     }

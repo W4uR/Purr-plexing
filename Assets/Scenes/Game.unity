@@ -482,7 +482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - {fileID: -3892831335701115349, guid: 4a5b2e618eb46894eb7af3d8ce2b0434, type: 3}
-  - {fileID: -3892831335701115349, guid: e7aee673150e16a44b2082328a408117, type: 3}
   levelParent: {fileID: 214532474}
 --- !u!4 &1225897779
 Transform:
