@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Narration Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Narration
+  m_TableCollectionNameGuidString: 9663b956fa02a9f45afb5ae7f4dc2ed2
+  m_Entries:
+  - m_Id: 8816955392
+    m_Key: tutorial.intro.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 506794086400
+    m_Key: tutorial.intro.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766467641344
+    m_Key: tutorial.intro.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1152175837184
+    m_Key: tutorial.intro.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15903569417342976
+    m_Key: tutorial.intro.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15904307707121664
+    m_Key: tutorial.controls.calling.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15904884168069120
+    m_Key: tutorial.cat.response
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15907955140988928
+    m_Key: tutorial.controls.movement.forward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15914411185672192
+    m_Key: tutorial.cues.steps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15961496287186944
+    m_Key: tutorial.cues.breeze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17392091554910208
+    m_Key: tutorial.controls.movement.turning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17392491897032704
+    m_Key: tutorial.cues.breeze.volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17393848733405184
+    m_Key: tutorial.controls.calling.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17394230826110976
+    m_Key: tutorial.cues.occlusion
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6757604359464550402
+  references:
+    version: 2
+    RefIds:
+    - rid: 6757604359464550402
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1708180690291

@@ -7,7 +7,7 @@ public static class Utility
 
 }
 
-public static class EXtensions
+public static class Extensions
 {
     public static Vector2Int ToVector2Int(this Vector3 vector3)
     {

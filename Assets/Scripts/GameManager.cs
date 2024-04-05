@@ -6,11 +6,19 @@ using System;
 
 public class GameManager : Singleton<GameManager>
 {
-    LevelManager levelManager = null;
+    // At some point this should be  a seperate GameConig file or something like that
+    public static bool VisualAids { get; internal set; } = true;
 
-    private void Start()
+    public int levelToLoad;
+
+    private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void StartGame()
@@ -24,10 +32,8 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("Scene loaded: " + scene.name);
         if (scene.name.Equals("Game"))
         {
-            // Játék változók inicializálása
-            levelManager = FindObjectOfType<LevelManager>();
             // Pálya betöltése
-            levelManager.LoadLevel(0);
+            LevelManager.LoadLevel(levelToLoad);
         }
     }
 

@@ -2,23 +2,34 @@ using System;
 using System.CodeDom.Compiler;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
 public class Level : MonoBehaviour
 {
     [SerializeField]
+    Cell cellPrefab;
+
+    [Header("Tilemap layers")]
+    [SerializeField]
     Tilemap layoutMap;
     [SerializeField]
     Tilemap objectMap;
-
+    [Header("Level Event Handler")]
     [SerializeField]
-    Cell cellPrefab;
+    GameObject levelEventHandler;
 
-    private Dictionary<Vector2Int, Cell> cells;
+
+    public Dictionary<Vector2Int, Cell> cells { get; private set; }
     public int catsOnLevel { get; private set; }
     public Vector3 spawnPoint { get; private set; }
 
+    public Dictionary<Vector2Int, Cell> GetCells()
+    {
+        return cells;
+    }
 
     public Cell GetCell(Vector3 worldPosition)
     {
@@ -29,16 +40,19 @@ public class Level : MonoBehaviour
         }
         else
         {
-            return cells[worldPosition.ToVector2Int()];
+            if (cells.TryGetValue(worldPosition.ToVector2Int(), out Cell cell))
+                return cell;
+            return null;
         }
 
     }
 
-    public void Initialize(Transform parent = null)
+    public void Initialize(Transform parent)
     {
         ResetLevel(parent);
         GenerateLayout(parent);
-        GenerateObjects();
+        GenerateObjects(parent);
+        Instantiate(levelEventHandler, parent);
     }
 
     private void ResetLevel(Transform parent)
@@ -92,7 +106,7 @@ public class Level : MonoBehaviour
     }
 
 
-    void GenerateObjects()
+    void GenerateObjects(Transform parent)
     {
         foreach (var position in objectMap.cellBounds.allPositionsWithin)
         {
@@ -103,9 +117,9 @@ public class Level : MonoBehaviour
             Vector3 worldPosition = new Vector3(position.x, 0f, position.y);
             foreach (GameObject o in objectTile.objects)
             {
-                var newObject = Instantiate(o, cells[worldPosition.ToVector2Int()].transform);
+                var newObject = Instantiate(o, worldPosition + o.transform.position, o.transform.rotation, parent);
                 // Ha a létrehozott objektum egy macska, akkor növeljük a macskák számát
-                if(newObject.CompareTag("Cat"))
+                if (newObject.CompareTag("Cat"))
                 {
                     catsOnLevel++;
                     print("A cat has been spawned on " + worldPosition.ToVector2Int());

@@ -19,22 +19,6 @@ public class PlayerController : MonoBehaviour
     private bool isRotating = false;
 
 
-    private void OnEnable()
-    {
-        LevelManager.levelLoaded += TeleportToSpawn;
-    }
-
-    private void OnDisable()
-    {
-        LevelManager.levelLoaded -= TeleportToSpawn;
-    }
-
-    void TeleportToSpawn()
-    {
-        transform.position = LevelManager.GetSpawnPosition();
-        transform.rotation = Quaternion.FromToRotation(transform.forward, Vector3.forward);
-    }
-
     void Update()
     {
         HandleInput();
@@ -87,8 +71,8 @@ public class PlayerController : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 endPosition = transform.position + transform.forward;
 
-        Cell currentCell = LevelManager.GetCell(startPosition);
-        Cell targetCell = LevelManager.GetCell(endPosition);
+        Cell currentCell = LevelManager.CurrentLevel.GetCell(startPosition);
+        Cell targetCell = LevelManager.CurrentLevel.GetCell(endPosition);
 
 
         StartCoroutine(playerAudioHandler.PlayStepsForward(currentCell, targetCell));
@@ -114,7 +98,7 @@ public class PlayerController : MonoBehaviour
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation = Quaternion.Euler(0f, direction.toRotationAngle(), 0f) * startRotation;
 
-        Cell currentCell = LevelManager.GetCell(transform.position);
+        Cell currentCell = LevelManager.CurrentLevel.GetCell(transform.position);
         StartCoroutine(playerAudioHandler.PlayRotationSteps(currentCell,direction));
 
         while (elapsedTime < rotateDuration)

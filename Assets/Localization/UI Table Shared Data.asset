@@ -13,28 +13,41 @@ MonoBehaviour:
   m_Name: UI Table Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: UI Table
-  m_TableCollectionNameGuidString: ba9eb2e4d88a7e24b8af39b347223865
+  m_TableCollectionNameGuidString: ef512e4f07bd467489fd9e2b14e94112
   m_Entries:
-  - m_Id: 21903183872
-    m_Key: menu.play.tutorial
+  - m_Id: 8657571840
+    m_Key: menu.play
     m_Metadata:
       m_Items: []
-  - m_Id: 145656123392
-    m_Key: menu.quit
-    m_Metadata:
-      m_Items: []
-  - m_Id: 189612429312
+  - m_Id: 40026771456
     m_Key: menu.change.language
     m_Metadata:
       m_Items: []
+  - m_Id: 59119243264
+    m_Key: menu.quit
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 6757604312908562432
   m_KeyGenerator:
-    rid: 6757604202216947736
+    rid: 6757604202216947741
   references:
     version: 2
     RefIds:
-    - rid: 6757604202216947736
+    - rid: 6757604202216947741
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1707576111996
+        m_CustomEpoch: 1707576403164
+    - rid: 6757604312908562432
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 8657571840
+          m_TableCodes:
+          - en
+        - m_KeyId: 59119243264
+          m_TableCodes:
+          - en
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

@@ -10,9 +10,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<T>();
+                instance = FindFirstObjectByType<T>();
 
-                if (FindObjectsOfType<T>().Length > 1)
+                if (FindObjectsByType<T>(FindObjectsSortMode.None).Length > 1)
                 {
                     Debug.LogWarning("More than one instance of " + typeof(T) + " found!");
                     return instance;

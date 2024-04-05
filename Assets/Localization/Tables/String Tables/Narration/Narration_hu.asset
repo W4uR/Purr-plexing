@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Narration_hu
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: hu
+  m_SharedData: {fileID: 11400000, guid: 9663b956fa02a9f45afb5ae7f4dc2ed2, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8816955392
+    m_Localized: Mi ez a hang?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 506794086400
+    m_Localized: "Patk\xE1nyok? Az \xE9n h\xE1zamban?! Az nem lehet..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 766467641344
+    m_Localized: "\xDAgy t\u0171nik Mr. Szak\xE1l t\xFAl lusta ahoz, hogy macskak\xE9nt
+      v\xE9gezze a dolg\xE1t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1152175837184
+    m_Localized: "Tal\xE1n csak egy kis l\xF6k\xE9sre van sz\xFCks\xE9ge."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15903569417342976
+    m_Localized: "Nos akkor... Hol van az a lusta sz\xF6rcsom\xF3?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15904307707121664
+    m_Localized: "Nyomd meg a [SZ\xD3K\xD6Z] billenyt\u0171t, hogy h\xEDvd Mr. Szak\xE1llat."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15904884168069120
+    m_Localized: "Hallak \xE1m!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15907955140988928
+    m_Localized: "Nyomd meg a [FELFELE NY\xCDL] billenyt\u0171t, hogy el\u0151re
+      l\xE9pj egy mez\u0151t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15914411185672192
+    m_Localized: "<i>Egy mez\u0151nyi mozg\xE1s k\xE9t l\xE9p\xE9s hangot fog eredm\xE9nyezni:
+      egyet a mez\u0151nek, amelyr\u0151l elmozdulsz, \xE9s egyet annak a mez\u0151nek,
+      amelyre \xE1tl\xE9psz.</i>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15961496287186944
+    m_Localized: "Hallom a huzatot jobbr\xF3l."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17392091554910208
+    m_Localized: "Nyomd meg a [JOBBRA NY\xCDL] billenty\u0171t, hogy elfordulj jobbra."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17392491897032704
+    m_Localized: "<i>Min\xE9l hosszabb a folyos\xF3 melleted, ann\xE1l hangosabb
+      a fuvallat.</i>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17393848733405184
+    m_Localized: "<i>Pr\xF3b\xE1ld \xFAjra h\xEDvni a macsk\xE1t.</i>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17394230826110976
+    m_Localized: "<i>Mr. Szak\xE1ll ny\xE1vog\xE1sa sokkal tiszt\xE1bban hallhat\xF3.
+      Azaz nincs k\xF6ztetek akad\xE1ly.</i>"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

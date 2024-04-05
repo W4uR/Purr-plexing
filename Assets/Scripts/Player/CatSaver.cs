@@ -1,23 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CatSaver : MonoBehaviour
 {
-
-    List<Cat> heldCats;
-    int catsToSave;
-    int savedCats = 0;
-
+    private List<Cat> heldCats;
+    private int catsToSave;
+    private int savedCats = 0;
 
     private void OnEnable()
     {
-        LevelManager.levelLoaded += OnLevelLoaded;       
+        LevelManager.OnLevelLoaded += OnLevelLoaded;       
     }
 
     private void OnDisable()
     {
-        LevelManager.levelLoaded -= OnLevelLoaded;
+        LevelManager.OnLevelLoaded -= OnLevelLoaded;
     }
 
     private void OnLevelLoaded()
@@ -32,7 +31,8 @@ public class CatSaver : MonoBehaviour
     {
         heldCats.Add(cat);
         cat.SetCarried(true);
-        cat.transform.SetParent(transform, false);
+        cat.transform.position = transform.position;
+        cat.transform.SetParent(transform, true);
         GlobalSoundEffects.Instance.PlayCatPickUp();
     }
 
@@ -59,7 +59,7 @@ public class CatSaver : MonoBehaviour
     {
         switch (other.tag)
         {
-            case "Spawn":
+            case "Nest":
                 SaveCats();
                 break;
             case "Cat":

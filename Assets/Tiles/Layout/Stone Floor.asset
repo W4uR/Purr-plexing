@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c79e284fe8930f4cbe471abd7f99691, type: 3}
   m_Name: Stone Floor
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 8d71d4837cec05f45abc9f898277bf5b, type: 3}
-  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
+  m_Sprite: {fileID: -874411947, guid: 9d1497bc18b56e644908195fb8639eed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
     e01: 0

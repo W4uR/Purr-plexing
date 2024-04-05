@@ -14,10 +14,13 @@ public class PlayerAudioHandler : MonoBehaviour
     AudioSource LeftBreezeSource;
     [SerializeField]
     AudioSource RightBreezeSource;
-    [Range(1f, 50f)]
-    [SerializeField]
-    float breezeVolumeScale = 1f;
 
+    private static PlayerAudioHandler instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void FixedUpdate()
     {
@@ -26,39 +29,31 @@ public class PlayerAudioHandler : MonoBehaviour
 
     void HandleBreezeAudio()
     {
-        // Jobb fül
-        Ray ray = new Ray(transform.position, transform.right);
-        RaycastHit hit;
-        if (Physics.Raycast(ray,out hit))
+        float leftBreezeVolume = DistanceToVolume(DistanceToLeftWall());
+
+        if (leftBreezeVolume != 0f)
         {
-            RightBreezeSource.volume = hit.distance / breezeVolumeScale;
-            if(hit.distance > 1f)
-            {
-                if (!RightBreezeSource.isPlaying)
-                    RightBreezeSource.Play();
-            }
-            else
-            {
-                RightBreezeSource.Pause();
-            }
+            LeftBreezeSource.volume = leftBreezeVolume;
+            if (!LeftBreezeSource.isPlaying)
+                LeftBreezeSource.Play();
+        }
+        else
+        {
+            LeftBreezeSource.Pause();
         }
 
-        // Bal fül
-        ray = new Ray(transform.position, -transform.right);
-        if (Physics.Raycast(ray, out hit))
-        {
-            LeftBreezeSource.volume = hit.distance / breezeVolumeScale;
-            if (hit.distance > 1f)
-            {
-                if (!LeftBreezeSource.isPlaying)
-                    LeftBreezeSource.Play();
-            }
-            else
-            {
-                LeftBreezeSource.Pause();
-            }
-        }
 
+        float rightBreezeVolume = DistanceToVolume(DistanceToRightWall());
+        if (rightBreezeVolume != 0f)
+        {
+            RightBreezeSource.volume = rightBreezeVolume;
+            if (!RightBreezeSource.isPlaying)
+                RightBreezeSource.Play();
+        }
+        else
+        {
+            RightBreezeSource.Pause();
+        }
     }
 
     public IEnumerator PlayStepsForward(Cell currentCell, Cell targetCell)
@@ -79,5 +74,52 @@ public class PlayerAudioHandler : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         stepsSource.panStereo = 0f;
         stepsSource.PlayOneShot(step2);
+    }
+
+    // Statikus metódusok
+
+    public static Vector3 GetRightEarPosition()
+    {
+        return instance.transform.position + instance.transform.right * 0.2f;
+    }
+    public static Vector3 GetLefttEarPosition()
+    {
+        return instance.transform.position - instance.transform.right * 0.2f;
+    }
+
+    private static float DistanceToVolume(float distance)
+    {
+        if (distance < 1f)
+        {
+            return 0f;
+        }
+        else if (distance < 3f)
+        {
+            return 0.12f;
+        }
+        else if (distance < 5f)
+        {
+            return 0.46f;
+        }
+        else
+        {
+            return 65f;
+        }
+    }
+
+    public static float DistanceToLeftWall()
+    {
+        Ray ray = new Ray(instance.transform.position, -instance.transform.right);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
+        return hit.distance;
+    }
+
+    public static float DistanceToRightWall()
+    {
+        Ray ray = new Ray(instance.transform.position, instance.transform.right);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit);
+        return hit.distance;
     }
 }

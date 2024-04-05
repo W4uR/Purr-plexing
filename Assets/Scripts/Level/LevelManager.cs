@@ -8,36 +8,36 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
+    Transform levelParent;
+    [SerializeField]
     Level[] levels;
 
-    [SerializeField]
-    Transform levelParent;
+    private static LevelManager instance;
+    private static int currentLevelIndex = 0;
+    public static Level CurrentLevel { get; private set; }
+    public static event Action OnLevelLoaded;
 
-    private int currentLevelIndex = 0;
-    private static Level currentLevel = null;
-
-    public static event Action levelLoaded;
-
-    public static Cell GetCell(Vector3 worldPosition)
+    private void Awake()
     {
-        return currentLevel.GetCell(worldPosition);
+        instance = this;
     }
+
     public static int GetNumberOfCatsOnCurrentLevel()
     {
-        return currentLevel.catsOnLevel;
+        return CurrentLevel.catsOnLevel;
     }
 
     public static Vector3 GetSpawnPosition()
     {
-        return currentLevel.spawnPoint;
+        return CurrentLevel.spawnPoint;
     }
 
-    public void LoadLevel(int levelIndex)
+    public static void LoadLevel(int levelIndex)
     {
-
         currentLevelIndex = levelIndex;
-        currentLevel = levels[currentLevelIndex];
-        currentLevel.Initialize(levelParent);
-        levelLoaded.Invoke();
+        CurrentLevel = instance.levels[currentLevelIndex];
+        CurrentLevel.Initialize(instance.levelParent);
+        Player.TeleportTo(GetSpawnPosition());
+        OnLevelLoaded.Invoke();
     }
 }
