@@ -11,9 +11,10 @@ public class Player : MonoBehaviour
         instance = this;
     }
 
-    public static void TeleportTo(Vector3 position)
+    public static void TeleportTo(Vector3 position, bool resetRotation = true)
     {
-        instance.transform.position = position;
+        instance.transform.position = new Vector3(position.x, instance.transform.position.y, position.z);
+        instance.transform.rotation = Quaternion.Euler(Vector3.forward);
     }
 
     public static Vector3 GetPosition()

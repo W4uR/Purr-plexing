@@ -10,7 +10,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(Introduction());
     }
 
-
+    
     IEnumerator Introduction()
     {
         // Welcome player
@@ -61,8 +61,8 @@ public class Tutorial : MonoBehaviour
         }
         yield return Narrator.PlayAudioClip("tutorial.cues.occlusion");
         
-        //
+        
 
     }
-
+    
 }

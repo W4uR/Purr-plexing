@@ -20,7 +20,7 @@ GameObject:
   m_Layer: 2
   m_Name: Cat
   m_TagString: Cat
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -338,11 +338,11 @@ AudioSource:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -3.197793
-      outSlope: -3.197793
+      inSlope: -0.8472975
+      outSlope: -0.8472975
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.15760869
+      inWeight: 0.55706525
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

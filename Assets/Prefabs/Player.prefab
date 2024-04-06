@@ -362,7 +362,6 @@ GameObject:
   - component: {fileID: 2295933933635088241}
   - component: {fileID: 4039629663201590161}
   - component: {fileID: 8985918533620760213}
-  - component: {fileID: 6310736169099400245}
   - component: {fileID: 7747780885261800760}
   - component: {fileID: 8184690897073895582}
   - component: {fileID: 5968695279613958878}
@@ -370,6 +369,7 @@ GameObject:
   - component: {fileID: 5904835701862997701}
   - component: {fileID: 4069030150202990550}
   - component: {fileID: 8167108892731445337}
+  - component: {fileID: 3439944065864044040}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -429,19 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3019f95c0f36bb34abe6536997dd104a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6310736169099400245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6836474202132572109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec43398acf1c9b4a8a6c62d312adff4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMover: {fileID: 5904835701862997701}
 --- !u!114 &7747780885261800760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +536,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c7c020d2a31904a8537d795aa19a42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whislteCooldown: 1
+  whislteCooldown: 1.5
+  whistles: {fileID: 11400000, guid: c15b5f78156660044b884c5737b17676, type: 2}
 --- !u!114 &5904835701862997701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,8 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4ca22424d6e0348bde83b43a5c458a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDuration: 1
-  turnDuration: 0.7
+  stepDuration: 0.85
+  turnDuration: 0.68
   wallLayers:
     serializedVersion: 2
     m_Bits: 8
@@ -679,6 +667,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioGroups: []
+--- !u!114 &3439944065864044040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836474202132572109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 980f77c46555e2f45b6aabd1c8bbb726, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5904835701862997701}
+        m_TargetAssemblyTypeName: Mover, Assembly-CSharp
+        m_MethodName: OnMoveForward
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: aff4fdae-82c4-4e44-b2a0-fcfab49b9319
+    m_ActionName: 'Player/Move Forward[/Keyboard/w,/Keyboard/upArrow,/Mouse/scroll/up]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5904835701862997701}
+        m_TargetAssemblyTypeName: Mover, Assembly-CSharp
+        m_MethodName: OnTurn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 38abff9c-7d7a-41f3-a619-166a46d2288e
+    m_ActionName: 'Player/Turning[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow,/Mouse/leftButton,/Mouse/rightButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2916779537752450966}
+        m_TargetAssemblyTypeName: CatCaller, Assembly-CSharp
+        m_MethodName: OnWhistle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8676d396-25c7-4fef-9a7d-d5d331a33f2c
+    m_ActionName: 'Player/Cat Call[/Keyboard/space,/Mouse/scroll/down]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &7373066816018404328
 GameObject:
   m_ObjectHideFlags: 0

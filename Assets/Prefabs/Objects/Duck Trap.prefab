@@ -15,7 +15,7 @@ GameObject:
   m_Layer: 2
   m_Name: Duck Trap
   m_TagString: Duck Trap
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
@@ -164,3 +164,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e78cf32dd04d145acda57165d98d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 2

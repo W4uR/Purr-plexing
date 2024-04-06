@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
     public static Level CurrentLevel { get; private set; }
     public static event Action OnLevelLoaded;
 
+    public static Transform GetLevelParent() => instance.levelParent;
+
     private void Awake()
     {
         instance = this;
@@ -24,12 +26,12 @@ public class LevelManager : MonoBehaviour
 
     public static int GetNumberOfCatsOnCurrentLevel()
     {
-        return CurrentLevel.catsOnLevel;
+        return CurrentLevel.CatsOnLevel;
     }
 
-    public static Vector3 GetSpawnPosition()
+    public static int GetNumberOfLevels()
     {
-        return CurrentLevel.spawnPoint;
+        return instance.levels.Length;
     }
 
     public static void LoadLevel(int levelIndex)
@@ -37,7 +39,6 @@ public class LevelManager : MonoBehaviour
         currentLevelIndex = levelIndex;
         CurrentLevel = instance.levels[currentLevelIndex];
         CurrentLevel.Initialize(instance.levelParent);
-        Player.TeleportTo(GetSpawnPosition());
         OnLevelLoaded.Invoke();
     }
 }

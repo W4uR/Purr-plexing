@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using static Unity.Burst.Intrinsics.X86;
 
 public class Mover : MonoBehaviour
@@ -29,6 +30,18 @@ public class Mover : MonoBehaviour
         }
         // A mozgás lehetséges
         return true;
+    }
+
+    public void OnMoveForward(InputAction.CallbackContext context)
+    {
+        if (context.ReadValueAsButton())
+            MoveToward(RelativeDirection.FORWARD);
+    }
+
+    public void OnTurn(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+            TurnToward(context.ReadValue<float>() < 0f ? RelativeDirection.LEFT : RelativeDirection.RIGHT);
     }
 
     public void MoveToward(AbsoluteDirection direction)

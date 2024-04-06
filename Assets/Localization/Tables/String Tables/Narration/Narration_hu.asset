@@ -32,7 +32,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1152175837184
-    m_Localized: "Tal\xE1n csak egy kis l\xF6k\xE9sre van sz\xFCks\xE9ge."
+    m_Localized: "Ha nem \xFCld\xF6zi a patk\xE1nyokat. Majd \xE9n oda viszem \u0151t."
     m_Metadata:
       m_Items: []
   - m_Id: 15903569417342976
@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15961496287186944
-    m_Localized: "Hallom a huzatot jobbr\xF3l."
+    m_Localized: "\xC9rzem a huzatot jobbr\xF3l."
     m_Metadata:
       m_Items: []
   - m_Id: 17392091554910208

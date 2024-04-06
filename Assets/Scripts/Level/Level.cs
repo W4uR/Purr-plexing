@@ -22,25 +22,19 @@ public class Level : MonoBehaviour
     GameObject levelEventHandler;
 
 
-    public Dictionary<Vector2Int, Cell> cells { get; private set; }
-    public int catsOnLevel { get; private set; }
-    public Vector3 spawnPoint { get; private set; }
-
-    public Dictionary<Vector2Int, Cell> GetCells()
-    {
-        return cells;
-    }
+    public int CatsOnLevel { get; private set; }
+    public Dictionary<Vector2Int, Cell> Cells { get; private set; }
 
     public Cell GetCell(Vector3 worldPosition)
     {
-        if(cells == null ||cells.Count == 0)
+        if(Cells == null || Cells.Count == 0)
         {
             Debug.LogError("Call level.initialize() before accessing cells.");
             return null;
         }
         else
         {
-            if (cells.TryGetValue(worldPosition.ToVector2Int(), out Cell cell))
+            if (Cells.TryGetValue(worldPosition.ToVector2Int(), out Cell cell))
                 return cell;
             return null;
         }
@@ -57,12 +51,12 @@ public class Level : MonoBehaviour
 
     private void ResetLevel(Transform parent)
     {
-        cells = new Dictionary<Vector2Int, Cell>();
+        Cells = new Dictionary<Vector2Int, Cell>();
         foreach (Transform cell in parent)
         {
             Destroy(cell.gameObject);
         }
-        catsOnLevel = 0;
+        CatsOnLevel = 0;
     }
 
     void GenerateLayout(Transform parent)
@@ -83,20 +77,20 @@ public class Level : MonoBehaviour
             cell.SetFloorMaterial(layoutTile.stepSounds);
 
             //  Logikai tárolás < Koordináta - Mezõ > páros
-            cells.Add(worldPosition.ToVector2Int(), cell);
+            Cells.Add(worldPosition.ToVector2Int(), cell);
 
             // Debug - 
             cell.name = worldPosition.ToVector2Int().ToString();
         }
 
         //Falak elrejtése
-        foreach (var posCellPair in cells)
+        foreach (var posCellPair in Cells)
         {
             // Mind a négy irány ellenörzése ( észak, kelet, dél és nyugat)
             foreach (AbsoluteDirection direction in Enum.GetValues(typeof(AbsoluteDirection)))
             {
                 // Ha van szomszéd az adott irányba
-                if (cells.ContainsKey(posCellPair.Key + direction.ToVector2Int()))
+                if (Cells.ContainsKey(posCellPair.Key + direction.ToVector2Int()))
                 {
                     // Rejtsük el a falat
                     posCellPair.Value.HideWall(direction);
@@ -121,13 +115,14 @@ public class Level : MonoBehaviour
                 // Ha a létrehozott objektum egy macska, akkor növeljük a macskák számát
                 if (newObject.CompareTag("Cat"))
                 {
-                    catsOnLevel++;
+                    CatsOnLevel++;
                     print("A cat has been spawned on " + worldPosition.ToVector2Int());
                 }
-                // Kezdõ pozitció eltárolása
                 else if (newObject.CompareTag("Spawn"))
                 {
-                    spawnPoint = newObject.transform.position;
+                    Debug.Log("Spawn point: " + worldPosition);
+                    Debug.Log("Player position: " + Player.GetInstance().transform.position);
+                    Player.TeleportTo(worldPosition);
                 }
             }
         }

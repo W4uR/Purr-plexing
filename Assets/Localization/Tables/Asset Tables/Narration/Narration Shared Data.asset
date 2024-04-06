@@ -31,13 +31,60 @@ MonoBehaviour:
     m_Key: tutorial.intro.4
     m_Metadata:
       m_Items: []
+  - m_Id: 17460484123398144
+    m_Key: tutorial.intro.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17460939524149248
+    m_Key: tutorial.cat.response
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17460969723138048
+    m_Key: tutorial.cues.breeze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17461169342648320
+    m_Key: tutorial.cue.cat.picked.up
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 2799286386674106448
   m_KeyGenerator:
     rid: 6757604381148839996
   references:
     version: 2
     RefIds:
+    - rid: 2799286386674106448
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 18094755840
+          m_TableCodes:
+          - en
+        - m_KeyId: 51343003648
+          m_TableCodes:
+          - en
+        - m_KeyId: 72146751488
+          m_TableCodes:
+          - en
+        - m_KeyId: 126236495872
+          m_TableCodes:
+          - en
+        - m_KeyId: 17460484123398144
+          m_TableCodes:
+          - en
+        - m_KeyId: 17460939524149248
+          m_TableCodes:
+          - en
+        - m_KeyId: 17460969723138048
+          m_TableCodes:
+          - en
+        - m_KeyId: 17461169342648320
+          m_TableCodes:
+          - en
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
     - rid: 6757604381148839996
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:

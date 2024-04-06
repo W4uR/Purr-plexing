@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1152175837184
-    m_Localized: Maybe he just needs a little...push.
+    m_Localized: If he ain't gonna chase the rats. I'll bring him to the nest.
     m_Metadata:
       m_Items: []
   - m_Id: 15903569417342976
@@ -56,7 +56,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15961496287186944
-    m_Localized: I can hear the breeze coming from the right.
+    m_Localized: I can feel the breeze coming from the right. He must be at the end
+      of this hallway.
     m_Metadata:
       m_Items: []
   - m_Id: 17392091554910208
@@ -74,6 +75,11 @@ MonoBehaviour:
   - m_Id: 17394230826110976
     m_Localized: <i>The meows of Mr. Whiskers are much clearer. Meaning there are
       no obsticles between you.</i>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17788015510818816
+    m_Localized: Got you. Now I just have to find the nest. I think I passed by it
+      earlier.
     m_Metadata:
       m_Items: []
   references:

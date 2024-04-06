@@ -49,9 +49,4 @@ public class Cat : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = new Color(1f, .64f, 0f);
-        Gizmos.DrawWireSphere(transform.position, .3f);
-    }
 }

@@ -31,6 +31,7 @@ public class ToyTrap : MonoBehaviour
         {
             if (Vector3.Distance(scareable.transform.position, transform.position) <= radius)
             {
+                scareable.transform.SetParent(LevelManager.GetLevelParent());
                 StartCoroutine(scareable.GotScaredFrom(transform.position));
             }
         }

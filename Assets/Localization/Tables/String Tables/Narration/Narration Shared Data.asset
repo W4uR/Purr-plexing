@@ -71,6 +71,10 @@ MonoBehaviour:
     m_Key: tutorial.cues.occlusion
     m_Metadata:
       m_Items: []
+  - m_Id: 17788015510818816
+    m_Key: tutorial.cue.cat.picked.up
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

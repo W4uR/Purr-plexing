@@ -14,8 +14,6 @@ public class GlobalSoundEffects : Singleton<GlobalSoundEffects>
     AudioClip catSavedEffect;
     [SerializeField]
     AudioClip allCatsSavedEffect;
-    [SerializeField]
-    AudioClip whistleForCatsEffect;
 
     public void PlayCatPickUp()
     {
@@ -28,10 +26,5 @@ public class GlobalSoundEffects : Singleton<GlobalSoundEffects>
     public void PlayAllCatsSaved()
     {
         audioSource.PlayOneShot(allCatsSavedEffect,.5f);
-    }
-
-    public void PlayWhistle()
-    {
-        audioSource.PlayOneShot(whistleForCatsEffect);
     }
 }

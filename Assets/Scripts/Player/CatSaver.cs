@@ -40,17 +40,17 @@ public class CatSaver : MonoBehaviour
     {
         if (heldCats.Count == 0) return;
         savedCats += heldCats.Count;
-        if(savedCats == catsToSave)
-        {
-            Debug.Log("Every cat has been saved on this level.");
-            GlobalSoundEffects.Instance.PlayAllCatsSaved();
-            GameManager.Instance.LevelFinished();
-        }
         foreach (var cat in heldCats)
         {
             Destroy(cat.gameObject);
         }
         heldCats.Clear();
+        if (savedCats == catsToSave)
+        {
+            Debug.Log("Every cat has been saved on this level.");
+            GlobalSoundEffects.Instance.PlayAllCatsSaved();
+            StartCoroutine(GameManager.Instance.LevelFinished());
+        }
         GlobalSoundEffects.Instance.PlayCatSaved();
     }
 

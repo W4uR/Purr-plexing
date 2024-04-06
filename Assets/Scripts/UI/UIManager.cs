@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
-public class LanguageManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     private const string LANGUAGE_KEY = "LanguageKey";
 
@@ -14,12 +14,22 @@ public class LanguageManager : MonoBehaviour
         StartCoroutine(SetLanguage(PlayerPrefs.GetInt(LANGUAGE_KEY, 0)));
     }
 
+    public void OnPlayTutorialClicked()
+    {
+        GameManager.Instance.StartGame(0);
+    }
+
     public void OnChangeLanguageClicked()
     {
         if (changeInProgress) return;
         int id = LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale);
         id = ++id % LocalizationSettings.AvailableLocales.Locales.Count;
         StartCoroutine(SetLanguage(id));
+    }
+
+    public void OnQuitClicked()
+    {
+        GameManager.Instance.QuitGame();
     }
 
     IEnumerator SetLanguage(int id)

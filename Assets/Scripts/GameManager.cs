@@ -9,7 +9,7 @@ public class GameManager : Singleton<GameManager>
     // At some point this should be  a seperate GameConig file or something like that
     public static bool VisualAids { get; internal set; } = true;
 
-    public int levelToLoad;
+    private int _levelToLoad;
 
     private void OnEnable()
     {
@@ -21,9 +21,10 @@ public class GameManager : Singleton<GameManager>
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    public void StartGame()
+    public void StartGame(int levelToLoad)
     {
         Debug.Log("Starting game...");
+        _levelToLoad = levelToLoad;
         SceneManager.LoadScene("Game");
     }
 
@@ -33,13 +34,18 @@ public class GameManager : Singleton<GameManager>
         if (scene.name.Equals("Game"))
         {
             // Pálya betöltése
-            LevelManager.LoadLevel(levelToLoad);
+            LevelManager.LoadLevel(_levelToLoad);
         }
     }
 
-    internal void LevelFinished()
+    public IEnumerator LevelFinished()
     {
-        Invoke(nameof(BackToMenu), 3f);
+        _levelToLoad++;
+        yield return new WaitForSeconds(1); // Wait for player to finish moving Or else the end of movement teleport overwrites the teleport to spawnpoint
+        if (LevelManager.GetNumberOfLevels() > _levelToLoad)
+            LevelManager.LoadLevel(_levelToLoad);
+        else
+            BackToMenu();
     }
 
     public void QuitGame()

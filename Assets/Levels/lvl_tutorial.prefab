@@ -148,7 +148,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: e2065640e8f59b6449187d0168e1a96b, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: 751869564, guid: cc313a776920a4e4397e441858569f0d, type: 3}
+    m_Data: {fileID: 858598574, guid: cc313a776920a4e4397e441858569f0d, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1584689558, guid: cc313a776920a4e4397e441858569f0d, type: 3}
   - m_RefCount: 1
@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4652657924972537132
 Transform:
   m_ObjectHideFlags: 0
