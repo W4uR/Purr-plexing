@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SoundOcclusionWidening: 0.2
-  PlayerOcclusionWidening: 0.2
+  PlayerOcclusionWidening: 0.4
   OcclusionLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -257,6 +257,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepDuration: 0.4
+  turnDuration: 1
+  wallLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  randomSoundPlayer: {fileID: 0}
+  playStepSounds: 0
 --- !u!1 &7171273196200386280
 GameObject:
   m_ObjectHideFlags: 0

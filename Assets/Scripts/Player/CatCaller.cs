@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerAudioHandler))]
+[RequireComponent(typeof(BreezePlayer))]
 public class CatCaller : MonoBehaviour
 {
     [SerializeField]

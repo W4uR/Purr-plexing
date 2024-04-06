@@ -26,6 +26,15 @@ public class RandomSoundPlayer : MonoBehaviour
     {
         AudioClip[] clips = group.clips;
         int randomIndex = Random.Range(0, clips.Length);
+        audioSource.panStereo = 0f;
+        audioSource.PlayOneShot(clips[randomIndex]);
+    }
+
+    public void PlayRandomFromGroup(AudioGroup group, RelativeDirection relativeDirection)
+    {
+        AudioClip[] clips = group.clips;
+        int randomIndex = Random.Range(0, clips.Length);
+        audioSource.panStereo = relativeDirection.ToPanStereo();
         audioSource.PlayOneShot(clips[randomIndex]);
     }
 }

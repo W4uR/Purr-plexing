@@ -79,8 +79,8 @@ public class Level : MonoBehaviour
             var cell = Instantiate(cellPrefab, worldPosition, cellPrefab.transform.rotation);
             cell.transform.SetParent(parent);
 
-            // Megfelõ padlótípus beállítása
-            cell.SetFloorMaterial(layoutTile.floorMaterial);
+            // Megfelõ lépéshangok beállítása
+            cell.SetFloorMaterial(layoutTile.stepSounds);
 
             //  Logikai tárolás < Koordináta - Mezõ > páros
             cells.Add(worldPosition.ToVector2Int(), cell);

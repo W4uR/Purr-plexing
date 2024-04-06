@@ -39,7 +39,7 @@ public class Tutorial : MonoBehaviour
         yield return Narrator.PlayAudioClip("tutorial.cues.steps");
         
         // Wait for breeze in right ear
-        while(PlayerAudioHandler.DistanceToRightWall() < 1)
+        while(Physics.Raycast(Player.GetPosition(),Player.GetInstance().transform.right,1f))
         {
             yield return null;
         }

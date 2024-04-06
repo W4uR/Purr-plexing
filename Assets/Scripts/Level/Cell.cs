@@ -10,15 +10,15 @@ public class Cell : MonoBehaviour
     [SerializeField]
     private GameObject[] walls;
 
-    private FloorMaterial floorMaterial;
+    private AudioGroup stepSounds;
 
     /// <summary>
     /// Beállít egy padló típust a mezõnek.
     /// </summary>
     /// <param name="floorMaterial">A beállítandó padló típus</param>
-    public void SetFloorMaterial(FloorMaterial floorMaterial)
+    public void SetFloorMaterial(AudioGroup stepSounds)
     {
-        this.floorMaterial = floorMaterial;
+        this.stepSounds = stepSounds;
     }
 
     /// <summary>
@@ -31,11 +31,11 @@ public class Cell : MonoBehaviour
     }
 
     /// <summary>
-    /// Visszaad egy véletlenszerû lépéshangeffektet a padló típusának megfelelõen
+    /// Visszaadja a padlónak megfelelõ lépéshang kollekciót
     /// </summary>
     /// <returns></returns>
-    public AudioClip GetRandomStepSound()
+    public AudioGroup GetStepSounds()
     {
-        return floorMaterial.GetRandomSound();
+        return stepSounds;
     }
 }

@@ -39,7 +39,7 @@ public class Scareable : MonoBehaviour
     IEnumerator FleeFrom(Vector3 source)
     {
         Predicate<AbsoluteDirection> facingSource = (AbsoluteDirection direction) => Vector3.Dot(transform.position-source, direction.ToVector3())<0f;
-        Predicate<AbsoluteDirection> invalidDirection = (AbsoluteDirection direction) => LevelManager.CurrentLevel.GetCell(transform.position+direction.ToVector3()) == null;
+        Predicate<AbsoluteDirection> invalidDirection = (AbsoluteDirection direction) => !mover.IsValidMove(transform.position + direction.ToVector3()); 
         List<AbsoluteDirection> posibleRoutes = ((AbsoluteDirection[])Enum.GetValues(typeof(AbsoluteDirection))).ToList();
         //posibleRoutes.Where(direction => Vector3.Dot(transform.position - source, direction.ToVector3()) < 0f).ToList().ForEach(x => Debug.Log("Removed: " + x.HumanName()));
         posibleRoutes.RemoveAll(invalidDirection);
@@ -51,7 +51,8 @@ public class Scareable : MonoBehaviour
         }
         //posibleRoutes.ForEach(x => Debug.Log(stepsAvaliable + ": "+x.HumanName()));
         int randomFleeDirectionIndex = UnityEngine.Random.Range(0, posibleRoutes.Count);
-        yield return StartCoroutine(mover.MoveOverTime(posibleRoutes[randomFleeDirectionIndex]));
+        mover.MoveToward(posibleRoutes[randomFleeDirectionIndex]);
+        yield return new WaitForSeconds(mover.GetStepDuration());
         stepsAvaliable--;
     }
 }

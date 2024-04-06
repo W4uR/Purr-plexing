@@ -5,5 +5,5 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(fileName = "New Layout Tile", menuName = "Tiles/Layout Tile")]
 public class LayoutTile : Tile
 {
-    public FloorMaterial floorMaterial;
+    public AudioGroup stepSounds;
 }

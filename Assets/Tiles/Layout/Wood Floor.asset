@@ -34,4 +34,4 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  floorMaterial: {fileID: 11400000, guid: 2974e1c526e200140ba7d0dcfd5988e0, type: 2}
+  stepSounds: {fileID: 11400000, guid: dacbf31687d9be141ba2ec726915ea1e, type: 2}

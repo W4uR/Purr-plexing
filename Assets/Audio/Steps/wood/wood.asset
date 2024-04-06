@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364a661f8d36bb640a5b5afc122ec341, type: 3}
-  m_Name: Wood
+  m_Script: {fileID: 11500000, guid: 26fd33a20d0dfc148a98dcff25d448b3, type: 3}
+  m_Name: wood
   m_EditorClassIdentifier: 
-  stepSounds:
+  clips:
   - {fileID: 8300000, guid: 14c07fdf631197d419691778da76e829, type: 3}
   - {fileID: 8300000, guid: a0564e6488110b841b7e183555f162c5, type: 3}
   - {fileID: 8300000, guid: 491593f80983fc246967db18aa1fc205, type: 3}
