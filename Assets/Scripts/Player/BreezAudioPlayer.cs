@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BreezePlayer : MonoBehaviour
+public class BreezAudioPlayer : MonoBehaviour
 {
-
     [SerializeField]
     AudioSource LeftBreezeSource;
     [SerializeField]
     AudioSource RightBreezeSource;
-
     [SerializeField]
     AnimationCurve volumeFunction;
 
@@ -51,7 +49,7 @@ public class BreezePlayer : MonoBehaviour
 
     public float DistanceToLeftWall()
     {
-        Ray ray = new Ray(transform.position, -transform.right);
+        Ray ray = new Ray(LeftBreezeSource.transform.position, -transform.right);
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         return hit.distance;
@@ -59,7 +57,7 @@ public class BreezePlayer : MonoBehaviour
 
     public float DistanceToRightWall()
     {
-        Ray ray = new Ray(transform.position, transform.right);
+        Ray ray = new Ray(RightBreezeSource.transform.position, transform.right);
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         return hit.distance;

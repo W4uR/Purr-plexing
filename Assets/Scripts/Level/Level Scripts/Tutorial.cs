@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class Tutorial : MonoBehaviour
 {
+    private Transform _player;
+
     private void Start()
     {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(Introduction());
     }
 
@@ -39,7 +42,7 @@ public class Tutorial : MonoBehaviour
         yield return Narrator.PlayAudioClip("tutorial.cues.steps");
         
         // Wait for breeze in right ear
-        while(Physics.Raycast(Player.GetPosition(),Player.GetInstance().transform.right,1f))
+        while(Physics.Raycast(_player.position,_player.right,1f))
         {
             yield return null;
         }

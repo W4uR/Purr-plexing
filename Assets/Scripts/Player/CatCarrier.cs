@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatSaver : MonoBehaviour
+public class CatCarrier : MonoBehaviour
 {
-    private List<Cat> heldCats;
-    private int catsToSave;
-    private int savedCats = 0;
+    [SerializeField]
+    private AudioGroup _catPickUpSoundSFX;
+    [SerializeField]
+    private AudioSource _audioSource;
+
+    private List<Cat> _heldCats;
+    private int _deliveredCats = 0;
 
     private void OnEnable()
     {
@@ -21,37 +25,32 @@ public class CatSaver : MonoBehaviour
 
     private void OnLevelLoaded()
     {
-        heldCats = new List<Cat>();
-        savedCats = 0;
-        catsToSave = LevelManager.GetNumberOfCatsOnCurrentLevel();
-        print("Cats to save on this level: " + catsToSave);
+        _heldCats = new List<Cat>();
+        _deliveredCats = 0;
     }
 
     void AttachCat(Cat cat)
     {
-        heldCats.Add(cat);
-        cat.SetCarried(true);
+        _heldCats.Add(cat);
         cat.transform.position = transform.position;
         cat.transform.SetParent(transform, true);
-        //GlobalSoundEffects.Instance.PlayCatPickUp();
+        _audioSource.PlayOneShot(_catPickUpSoundSFX.GetRandomClip());
     }
 
-    void SaveCats()
+    void DeliverHeldCats()
     {
-        if (heldCats.Count == 0) return;
-        savedCats += heldCats.Count;
-        foreach (var cat in heldCats)
+        if (_heldCats.Count == 0) return;
+        _deliveredCats += _heldCats.Count;
+        foreach (var cat in _heldCats)
         {
             Destroy(cat.gameObject);
         }
-        heldCats.Clear();
-        if (savedCats == catsToSave)
+        _heldCats.Clear();
+        if (_deliveredCats == LevelManager.GetNumberOfCatsOnCurrentLevel())
         {
             Debug.Log("Every cat has been saved on this level.");
-         //   GlobalSoundEffects.Instance.PlayAllCatsSaved();
             StartCoroutine(GameManager.Instance.LevelFinished());
         }
-        //GlobalSoundEffects.Instance.PlayCatSaved();
     }
 
 
@@ -60,7 +59,7 @@ public class CatSaver : MonoBehaviour
         switch (other.tag)
         {
             case "Nest":
-                SaveCats();
+                DeliverHeldCats();
                 break;
             case "Cat":
                 AttachCat(other.GetComponent<Cat>());

@@ -5,34 +5,23 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
     [SerializeField]
-    AudioGroup meows;
+    AudioGroup meowsSFX;
     [SerializeField]
-    AudioGroup purrs;
+    AudioGroup purrsSFX;
 
     [SerializeField]
-    AudioSource meowSource;
-    [SerializeField]
-    AudioSource purrsSource;
+    AudioSource audioSource;
 
-    private bool isCarried = false;
-
-    public void SetCarried(bool carried)
-    {
-        isCarried = carried;
-        if (isCarried)
-        {
-            purrsSource.Stop();
-        }
-    }
+    private bool _isCarried = false;
 
     private void OnEnable()
     {
-        CatCaller.CallingCats += OnCallingCats;
+        CatWhistler.CallingCats += OnCallingCats;
     }
 
     private void OnDisable()
     {
-        CatCaller.CallingCats -= OnCallingCats;
+        CatWhistler.CallingCats -= OnCallingCats;
     }
 
     private void OnCallingCats(Vector3 callerPos)
@@ -45,14 +34,22 @@ public class Cat : MonoBehaviour
     IEnumerator GiveSoundWithRandomDelay()
     {
         yield return new WaitForSeconds(Random.Range(0.3f, 1.9f));
-        if (isCarried == false)
+        if (_isCarried)
         {
-            meowSource.PlayOneShot(meows.GetRandomClip());
+            audioSource.PlayOneShot(purrsSFX.GetRandomClip());
         }
         else
         {
-            meowSource.PlayOneShot(purrs.GetRandomClip());
+            audioSource.PlayOneShot(meowsSFX.GetRandomClip());
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<CatCarrier>())
+        {
+            audioSource.Stop();
+            _isCarried = true;
+        }
+    }
 }

@@ -1,58 +1,49 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(Motor))]
+[RequireComponent(typeof(PlayerMotor))]
 public class Scareable : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField]
-    private int scareFactor = 2;
+    private int _stepsAvaliable = 2;
 
     [Header("Sounds")]
     [SerializeField]
-    AudioGroup scaredSFXGroup;
+    private AudioGroup _scaredSFXGroup;
     [SerializeField]
-    AudioSource audioSource;
+    private AudioSource _audioSource;
 
-    int stepsAvaliable = 0;
-    Motor mover;
+    private int _stepsLeft = 0;
 
-    private void Start()
+    public void GotScaredFrom(Vector3 source)
     {
-        mover = GetComponent<Motor>();
+        _stepsLeft = _stepsAvaliable;
+        _audioSource.PlayOneShot(_scaredSFXGroup.GetRandomClip());
+        FleeFrom(source);
     }
 
-    public IEnumerator GotScaredFrom(Vector3 source)
+    void FleeFrom(Vector3 source)
     {
-        stepsAvaliable = scareFactor;
-        audioSource.PlayOneShot(scaredSFXGroup.GetRandomClip());
-        while(stepsAvaliable > 0)
-        {
-            yield return StartCoroutine(FleeFrom(source));
-        }
-        
-    }
+        if (_stepsLeft == 0) return;
 
-    IEnumerator FleeFrom(Vector3 source)
-    {
-        Predicate<AbsoluteDirection> facingSource = (AbsoluteDirection direction) => Vector3.Dot(transform.position-source, direction.ToVector3())<0f;
-        Predicate<AbsoluteDirection> invalidDirection = (AbsoluteDirection direction) => !mover.IsValidMove(transform.position + direction.ToVector3()); 
-        List<AbsoluteDirection> posibleRoutes = ((AbsoluteDirection[])Enum.GetValues(typeof(AbsoluteDirection))).ToList();
-        //posibleRoutes.Where(direction => Vector3.Dot(transform.position - source, direction.ToVector3()) < 0f).ToList().ForEach(x => Debug.Log("Removed: " + x.HumanName()));
-        posibleRoutes.RemoveAll(invalidDirection);
-        posibleRoutes.RemoveAll(facingSource);
-        if (posibleRoutes.Count == 0)
+        bool facingSource(AbsoluteDirection direction) => Vector3.Dot(transform.position - source, direction.ToVector3()) < 0f;
+        bool invalidMove(AbsoluteDirection direction) => LevelManager.CurrentLevel.GetCell(transform.position + direction.ToVector3()) == null;
+
+        var posibleRoutes = ((AbsoluteDirection[])Enum.GetValues(typeof(AbsoluteDirection))).
+            Where(direction => !facingSource(direction) && !invalidMove(direction)).ToList();
+
+        if (posibleRoutes.Count() == 0)
         {
-            stepsAvaliable = 0;
-            yield break;
+            _stepsLeft = 0;
+            return;
         }
-        //posibleRoutes.ForEach(x => Debug.Log(stepsAvaliable + ": "+x.HumanName()));
+
+        Vector3 oldPosition = transform.position;
         int randomFleeDirectionIndex = UnityEngine.Random.Range(0, posibleRoutes.Count);
-        mover.MoveToward(posibleRoutes[randomFleeDirectionIndex]);
-        yield return new WaitForSeconds(mover.GetStepDuration());
-        stepsAvaliable--;
+        transform.Translate(posibleRoutes[randomFleeDirectionIndex].ToVector3(),Space.World);
+        _stepsLeft--;
+        FleeFrom(oldPosition);
     }
 }

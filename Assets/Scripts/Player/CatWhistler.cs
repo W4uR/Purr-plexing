@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(AudioSource))]
-public class CatCaller : MonoBehaviour
+public class CatWhistler : MonoBehaviour
 {
     [SerializeField]
     [Range(0.5f, 5f)]
@@ -14,8 +13,9 @@ public class CatCaller : MonoBehaviour
     private float whislteVolume = 0.8f;
     [SerializeField]
     private AudioGroup whistles;
-
+    [SerializeField]
     AudioSource audioSource;
+
     private bool canWhistle = true;
     public static event Action<Vector3> CallingCats;
 
@@ -38,6 +38,5 @@ public class CatCaller : MonoBehaviour
         yield return new WaitForSeconds(whislteCooldown);
         canWhistle = true;
     }
-
 
 }

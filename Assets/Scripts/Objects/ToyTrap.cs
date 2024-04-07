@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
@@ -7,9 +5,9 @@ public class ToyTrap : MonoBehaviour
 {
     [SerializeField]
     [Range(1f,5f)]
-    private float radius = 2f;
+    private float _radius = 2f;
 
-    AudioSource audioSource;
+    private AudioSource audioSource;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -20,19 +18,19 @@ public class ToyTrap : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             audioSource.Play();
-            ScareCats();
+            ScareNearby();
         }
     }
 
-    private void ScareCats()
+    private void ScareNearby()
     {
         Scareable[] scareables = FindObjectsByType<Scareable>(FindObjectsSortMode.None);
         foreach (Scareable scareable in scareables)
         {
-            if (Vector3.Distance(scareable.transform.position, transform.position) <= radius)
+            if (Vector3.Distance(scareable.transform.position, transform.position) <= _radius)
             {
                 scareable.transform.SetParent(LevelManager.GetLevelParent());
-                StartCoroutine(scareable.GotScaredFrom(transform.position));
+                scareable.GotScaredFrom(transform.position);
             }
         }
     }
@@ -40,6 +38,6 @@ public class ToyTrap : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }

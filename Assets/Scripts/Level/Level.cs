@@ -119,7 +119,8 @@ public class Level : MonoBehaviour
                 }
                 else if (newObject.CompareTag("Spawn"))
                 {
-                    Player.TeleportTo(worldPosition);
+                    var player = GameObject.FindGameObjectWithTag("Player").transform;
+                    player.SetPositionAndRotation(worldPosition, Quaternion.Euler(Vector3.zero));
                 }
             }
         }
