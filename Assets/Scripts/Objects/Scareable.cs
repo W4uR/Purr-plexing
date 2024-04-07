@@ -5,7 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(Mover))]
+[RequireComponent(typeof(Motor))]
 public class Scareable : MonoBehaviour
 {
     [SerializeField]
@@ -15,20 +15,20 @@ public class Scareable : MonoBehaviour
     [SerializeField]
     AudioGroup scaredSFXGroup;
     [SerializeField]
-    RandomSoundPlayer randomSoundPlayer;
+    AudioSource audioSource;
 
     int stepsAvaliable = 0;
-    Mover mover;
+    Motor mover;
 
     private void Start()
     {
-        mover = GetComponent<Mover>();
+        mover = GetComponent<Motor>();
     }
 
     public IEnumerator GotScaredFrom(Vector3 source)
     {
         stepsAvaliable = scareFactor;
-        randomSoundPlayer.PlayRandomFromGroup(scaredSFXGroup);
+        audioSource.PlayOneShot(scaredSFXGroup.GetRandomClip());
         while(stepsAvaliable > 0)
         {
             yield return StartCoroutine(FleeFrom(source));

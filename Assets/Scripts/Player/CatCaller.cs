@@ -3,24 +3,26 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(RandomSoundPlayer))]
+[RequireComponent(typeof(AudioSource))]
 public class CatCaller : MonoBehaviour
 {
     [SerializeField]
     [Range(0.5f, 5f)]
     private float whislteCooldown = 1f;
     [SerializeField]
-    AudioGroup whistles;
+    [Range(0.2f, 1f)]
+    private float whislteVolume = 0.8f;
+    [SerializeField]
+    private AudioGroup whistles;
 
-    RandomSoundPlayer randomSoundPlayer;
+    AudioSource audioSource;
     private bool canWhistle = true;
     public static event Action<Vector3> CallingCats;
 
     private void Start()
     {
-        randomSoundPlayer = GetComponent<RandomSoundPlayer>();
+        audioSource = GetComponent<AudioSource>();
     }
-
 
     public void OnWhistle(InputAction.CallbackContext context)
     {
@@ -31,7 +33,7 @@ public class CatCaller : MonoBehaviour
     private IEnumerator Whistle()
     {
         canWhistle = false;
-        randomSoundPlayer.PlayRandomFromGroup(whistles);
+        audioSource.PlayOneShot(whistles.GetRandomClip(),whislteVolume);
         CallingCats.Invoke(transform.position);
         yield return new WaitForSeconds(whislteCooldown);
         canWhistle = true;

@@ -33,7 +33,7 @@ public class CatSaver : MonoBehaviour
         cat.SetCarried(true);
         cat.transform.position = transform.position;
         cat.transform.SetParent(transform, true);
-        GlobalSoundEffects.Instance.PlayCatPickUp();
+        //GlobalSoundEffects.Instance.PlayCatPickUp();
     }
 
     void SaveCats()
@@ -48,10 +48,10 @@ public class CatSaver : MonoBehaviour
         if (savedCats == catsToSave)
         {
             Debug.Log("Every cat has been saved on this level.");
-            GlobalSoundEffects.Instance.PlayAllCatsSaved();
+         //   GlobalSoundEffects.Instance.PlayAllCatsSaved();
             StartCoroutine(GameManager.Instance.LevelFinished());
         }
-        GlobalSoundEffects.Instance.PlayCatSaved();
+        //GlobalSoundEffects.Instance.PlayCatSaved();
     }
 
 

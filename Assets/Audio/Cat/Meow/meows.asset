@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26fd33a20d0dfc148a98dcff25d448b3, type: 3}
   m_Name: meows
   m_EditorClassIdentifier: 
-  name: meows
   clips:
   - {fileID: 8300000, guid: 4e2e2e63070cd5f40939dc3528d914ce, type: 3}
-  - {fileID: 8300000, guid: 6b570c8816aa16d4ead8a06cca28de18, type: 3}
+  - {fileID: 8300000, guid: 13406642129e37c45ad301d8821e63c3, type: 3}
   - {fileID: 8300000, guid: 3d48afa92f170814a86219c7b1540201, type: 3}
   - {fileID: 8300000, guid: 73f58f3de8a6eea4b958953e6fa2cb81, type: 3}

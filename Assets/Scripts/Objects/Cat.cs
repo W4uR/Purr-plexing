@@ -5,9 +5,14 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
     [SerializeField]
-    RandomSoundPlayer randomSoundPlayer;
+    AudioGroup meows;
     [SerializeField]
-    AudioSource passivePurrer;
+    AudioGroup purrs;
+
+    [SerializeField]
+    AudioSource meowSource;
+    [SerializeField]
+    AudioSource purrsSource;
 
     private bool isCarried = false;
 
@@ -16,7 +21,7 @@ public class Cat : MonoBehaviour
         isCarried = carried;
         if (isCarried)
         {
-            passivePurrer.Stop();
+            purrsSource.Stop();
         }
     }
 
@@ -32,6 +37,7 @@ public class Cat : MonoBehaviour
 
     private void OnCallingCats(Vector3 callerPos)
     {
+        
         StartCoroutine(GiveSoundWithRandomDelay());
     }
 
@@ -41,11 +47,11 @@ public class Cat : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(0.3f, 1.9f));
         if (isCarried == false)
         {
-            randomSoundPlayer.PlayRandomFromGroup("meows");
+            meowSource.PlayOneShot(meows.GetRandomClip());
         }
         else
         {
-            randomSoundPlayer.PlayRandomFromGroup("purrs");
+            meowSource.PlayOneShot(purrs.GetRandomClip());
         }
     }
 

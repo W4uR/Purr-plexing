@@ -116,12 +116,9 @@ public class Level : MonoBehaviour
                 if (newObject.CompareTag("Cat"))
                 {
                     CatsOnLevel++;
-                    print("A cat has been spawned on " + worldPosition.ToVector2Int());
                 }
                 else if (newObject.CompareTag("Spawn"))
                 {
-                    Debug.Log("Spawn point: " + worldPosition);
-                    Debug.Log("Player position: " + Player.GetInstance().transform.position);
                     Player.TeleportTo(worldPosition);
                 }
             }

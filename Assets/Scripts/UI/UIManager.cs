@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
 
     public void OnPlayTutorialClicked()
     {
-        GameManager.Instance.StartGame(0);
+        GameManager.Instance.StartGame(2);
     }
 
     public void OnChangeLanguageClicked()

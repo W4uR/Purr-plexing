@@ -1,24 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 using static Unity.Burst.Intrinsics.X86;
 
-public class Mover : MonoBehaviour
+public class Motor : MonoBehaviour
 {
     [SerializeField]
-    float stepDuration = 1f;
+    private float stepDuration = 1f;
     [SerializeField]
-    float turnDuration = 1f;
+    private float turnDuration = 1f;
     [SerializeField]
-    LayerMask wallLayers;
-
+    private LayerMask wallLayers;
     [SerializeField]
-    RandomSoundPlayer randomSoundPlayer;
-    public bool playStepSounds = false;
-    public float GetStepDuration() => stepDuration;
+    private AudioSource audioSource;
+    [SerializeField]
+    private bool playStepSounds = false;
 
     private bool isMoving = false;
+
+    public float GetStepDuration() => stepDuration;
 
     public bool IsValidMove(Vector3 endPosition)
     {
@@ -107,15 +109,17 @@ public class Mover : MonoBehaviour
 
     private IEnumerator PlayStepsMoving(Cell startingCell, Cell targetCell)
     {
-        randomSoundPlayer.PlayRandomFromGroup(startingCell.GetStepSounds());
+        audioSource.PlayOneShot(startingCell.GetStepSounds().GetRandomClip());
          yield return new WaitForSeconds(stepDuration*.5f);
-        randomSoundPlayer.PlayRandomFromGroup(targetCell.GetStepSounds());
+        audioSource.PlayOneShot(targetCell.GetStepSounds().GetRandomClip());
     }
 
     private IEnumerator PlayStepsTurning(Cell currentCell, RelativeDirection turningDirection)
     {
-        randomSoundPlayer.PlayRandomFromGroup(currentCell.GetStepSounds(), turningDirection);
+        audioSource.panStereo = turningDirection.ToPanStereo();
+        audioSource.PlayOneShot(currentCell.GetStepSounds().GetRandomClip());
         yield return new WaitForSeconds(turnDuration*.7f);
-        randomSoundPlayer.PlayRandomFromGroup(currentCell.GetStepSounds());
+        audioSource.panStereo = 0f;
+        audioSource.PlayOneShot(currentCell.GetStepSounds().GetRandomClip());
     }
 }

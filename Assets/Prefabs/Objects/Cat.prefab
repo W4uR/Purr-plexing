@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6875841362090872377}
   - component: {fileID: 2326730062047015226}
   - component: {fileID: 164530272534043723}
-  - component: {fileID: -8384250305057973097}
   - component: {fileID: 406284282370970601}
   - component: {fileID: 3279321883778781471}
   m_Layer: 2
@@ -73,10 +72,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8129396675396150535, guid: 9dc2ff68d7dc480488908b53b95e7a80, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.35
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -170,8 +169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8db67e2d95a9224b94755359a4dd281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomSoundPlayer: {fileID: -8384250305057973097}
-  passivePurrer: {fileID: 5270472538200039202}
+  meows: {fileID: 11400000, guid: a73cc7dea6e43cc41a6b4068bd52a9f4, type: 2}
+  purrs: {fileID: 11400000, guid: 7218a1ec42d223a49ac02fac9ad34739, type: 2}
+  meowSource: {fileID: 2075045029498298328}
+  purrsSource: {fileID: 5270472538200039202}
 --- !u!169 &2326730062047015226
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
@@ -214,21 +215,6 @@ MonoBehaviour:
   OcclusionLayer:
     serializedVersion: 2
     m_Bits: 8
---- !u!114 &-8384250305057973097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4425543073017209967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f9738809deb18a4aa386b65d4ba904b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioGroups:
-  - {fileID: 11400000, guid: a73cc7dea6e43cc41a6b4068bd52a9f4, type: 2}
-  - {fileID: 11400000, guid: 7218a1ec42d223a49ac02fac9ad34739, type: 2}
 --- !u!114 &406284282370970601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scareFactor: 2
   scaredSFXGroup: {fileID: 11400000, guid: cbba915722e2a8e4dba3efe49b8f6e3f, type: 2}
-  randomSoundPlayer: {fileID: -8384250305057973097}
+  audioSource: {fileID: 0}
 --- !u!114 &3279321883778781471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,12 +242,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4ca22424d6e0348bde83b43a5c458a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepDuration: 0.4
+  stepDuration: 0.7
   turnDuration: 1
   wallLayers:
     serializedVersion: 2
     m_Bits: 8
-  randomSoundPlayer: {fileID: 0}
+  audioSource: {fileID: 2075045029498298328}
   playStepSounds: 0
 --- !u!1 &7171273196200386280
 GameObject:
