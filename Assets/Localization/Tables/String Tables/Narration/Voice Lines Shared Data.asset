@@ -10,31 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: UI Table Shared Data
+  m_Name: Voice Lines Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: UI Table
-  m_TableCollectionNameGuidString: ba9eb2e4d88a7e24b8af39b347223865
-  m_Entries:
-  - m_Id: 21903183872
-    m_Key: menu.play.tutorial
-    m_Metadata:
-      m_Items: []
-  - m_Id: 145656123392
-    m_Key: menu.quit
-    m_Metadata:
-      m_Items: []
-  - m_Id: 189612429312
-    m_Key: menu.change.language
-    m_Metadata:
-      m_Items: []
+  m_TableCollectionName: Voice Lines
+  m_TableCollectionNameGuidString: 9663b956fa02a9f45afb5ae7f4dc2ed2
+  m_Entries: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 6757604202216947736
+    rid: 6757604359464550402
   references:
     version: 2
     RefIds:
-    - rid: 6757604202216947736
+    - rid: 6757604359464550402
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1707576111996
+        m_CustomEpoch: 1708180690291
