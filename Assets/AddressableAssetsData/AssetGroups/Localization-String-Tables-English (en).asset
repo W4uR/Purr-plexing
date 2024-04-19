@@ -18,14 +18,14 @@ MonoBehaviour:
   m_GUID: e42b89ba389a2a64984856b0ef06888f
   m_SerializeEntries:
   - m_GUID: 916bc07c69f93a84f961a720a5e4444e
-    m_Address: UI Table_en
+    m_Address: UI_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9efbdf0f77a64574190eb2767a53a0e7
-    m_Address: Narration_en
+    m_Address: Voice Lines_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

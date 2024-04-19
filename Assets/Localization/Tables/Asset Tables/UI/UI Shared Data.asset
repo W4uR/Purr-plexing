@@ -14,19 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: UI
   m_TableCollectionNameGuidString: ef512e4f07bd467489fd9e2b14e94112
-  m_Entries:
-  - m_Id: 8657571840
-    m_Key: menu.play
-    m_Metadata:
-      m_Items: []
-  - m_Id: 40026771456
-    m_Key: menu.change.language
-    m_Metadata:
-      m_Items: []
-  - m_Id: 59119243264
-    m_Key: menu.quit
-    m_Metadata:
-      m_Items: []
+  m_Entries: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

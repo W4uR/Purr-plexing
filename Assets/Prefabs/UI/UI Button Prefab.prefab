@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4344076332982774401}
   - component: {fileID: 326705064129864104}
   - component: {fileID: 3162778712779988772}
-  - component: {fileID: 4828189009174555686}
-  - component: {fileID: 8530049758104259250}
-  - component: {fileID: 99868508734963081}
-  - component: {fileID: 4930758493074037110}
+  - component: {fileID: 4728121892148301681}
+  - component: {fileID: 8247425943539811641}
+  - component: {fileID: 4681239639387111694}
+  - component: {fileID: 141618019691056156}
   m_Layer: 5
   m_Name: UI Button Prefab
   m_TagString: Untagged
@@ -41,7 +41,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 96.5}
-  m_SizeDelta: {x: 429.9352, y: 80.6128}
+  m_SizeDelta: {x: 429.9352, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4344076332982774401
 CanvasRenderer:
@@ -137,7 +137,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4828189009174555686
+--- !u!114 &4728121892148301681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:ba9eb2e4d88a7e24b8af39b347223865
     m_TableEntryReference:
       m_KeyId: 0
       m_Key: 
@@ -164,7 +164,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6970138899423250048}
         m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
+        m_MethodName: SetText
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -177,21 +177,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
---- !u!114 &8530049758104259250
+--- !u!114 &8247425943539811641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401451163273729236}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d18ed12b29a9aa3479eb5083b95f899d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocalizedAssetReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:ef512e4f07bd467489fd9e2b14e94112
     m_TableEntryReference:
       m_KeyId: 0
       m_Key: 
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_UpdateAsset:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 99868508734963081}
+      - m_Target: {fileID: 4681239639387111694}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_clip
+        m_MethodName: set_resource
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -212,19 +212,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!82 &99868508734963081
+--- !u!82 &4681239639387111694
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401451163273729236}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -309,14 +309,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4930758493074037110
+--- !u!114 &141618019691056156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401451163273729236}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca96c77ee58a8bc4e933999eb405abfc, type: 3}
   m_Name: 
@@ -413,12 +413,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 42.7
   m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 16
-  m_fontSizeMax: 30
+  m_fontSizeMax: 50
   m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
-  m_ActiveFontFeatures: 00000000
+  m_ActiveFontFeatures: 
   m_enableExtraPadding: 0
   checkPaddingRequired: 0
   m_isRichText: 1

@@ -90,17 +90,6 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""1e871ae7-d7ff-4c12-a715-8bad3cb4e7f3"",
-                    ""path"": ""<Mouse>/scroll/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Move Forward"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""D-Pad"",
                     ""id"": ""f9ca50a9-bef3-4bf5-9859-4caba7435bb6"",
                     ""path"": ""1DAxis"",
@@ -211,28 +200,6 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""764eb125-7d57-4147-b36f-cba40118adef"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Turning"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""1e7044f4-cf63-4d49-b175-c11de76166ae"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Turning"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": ""Shoulder"",
                     ""id"": ""47cc6774-793a-421e-a0f2-a6f2766452b7"",
                     ""path"": ""1DAxis"",
@@ -286,17 +253,6 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
                     ""action"": ""Whistle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""036bbddd-cae5-4310-883e-f5d5717553a8"",
-                    ""path"": ""<Mouse>/scroll/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""Whistle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -320,17 +276,6 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
                 {
                     ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": false,
-                    ""isOR"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""Mouse"",
-            ""bindingGroup"": ""Mouse"",
-            ""devices"": [
-                {
-                    ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -477,15 +422,6 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
         {
             if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
             return asset.controlSchemes[m_KeyboardSchemeIndex];
-        }
-    }
-    private int m_MouseSchemeIndex = -1;
-    public InputControlScheme MouseScheme
-    {
-        get
-        {
-            if (m_MouseSchemeIndex == -1) m_MouseSchemeIndex = asset.FindControlSchemeIndex("Mouse");
-            return asset.controlSchemes[m_MouseSchemeIndex];
         }
     }
     public interface IPlayerActions

@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using UnityEngine.Localization.Tables;
 
-public class UIManager : MonoBehaviour
+public class LanguageManager : MonoBehaviour
 {
     private const string LANGUAGE_KEY = "LanguageKey";
 
     private bool changeInProgress = false;
 
-    [SerializeField]
-    StringTableEntry tableEntry;
-    private void Start()
+    public static LanguageManager Instance { get; private set; }
+
+    private void Awake()
     {
-        StartCoroutine(SetLanguage(PlayerPrefs.GetInt(LANGUAGE_KEY, 0)));
+        Instance = this;
     }
 
-    public void OnPlayTutorialClicked()
+    private void Start()
     {
-        GameManager.Instance.StartGame(2);
+        if (!PlayerPrefs.HasKey(LANGUAGE_KEY))
+        {
+            PlayerPrefs.SetInt(LANGUAGE_KEY, LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale));
+        }
+        StartCoroutine(SetLanguage(PlayerPrefs.GetInt(LANGUAGE_KEY, 0)));
+        Debug.Log(System.Globalization.CultureInfo.CurrentUICulture);
+        Debug.Log(LocalizationSettings.AvailableLocales.Locales[1]);
     }
 
     public void OnChangeLanguageClicked()
@@ -28,11 +33,6 @@ public class UIManager : MonoBehaviour
         int id = LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale);
         id = ++id % LocalizationSettings.AvailableLocales.Locales.Count;
         StartCoroutine(SetLanguage(id));
-    }
-
-    public void OnQuitClicked()
-    {
-        GameManager.Instance.QuitGame();
     }
 
     IEnumerator SetLanguage(int id)

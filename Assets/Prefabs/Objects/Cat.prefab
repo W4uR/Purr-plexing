@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 164530272534043723}
   - component: {fileID: 406284282370970601}
   - component: {fileID: 3279321883778781471}
+  - component: {fileID: -5205215672439057589}
   m_Layer: 2
   m_Name: Cat
   m_TagString: Cat
@@ -225,9 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 769b723f243b88c4bab46bb4ef2bbd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scareFactor: 2
-  scaredSFXGroup: {fileID: 11400000, guid: cbba915722e2a8e4dba3efe49b8f6e3f, type: 2}
-  audioSource: {fileID: 0}
+  _stepsAvaliable: 2
+  _scaredSFXGroup: {fileID: 0}
+  _audioSource: {fileID: 0}
 --- !u!114 &3279321883778781471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,3 +241,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4ca22424d6e0348bde83b43a5c458a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stepDuration: 0
+  _turnDuration: 0
+  _wallLayermask:
+    serializedVersion: 2
+    m_Bits: 0
+  _feetAudioSource: {fileID: 0}
+--- !u!114 &-5205215672439057589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425543073017209967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385897c0e65faa94eba8fe65ddcc878e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: -267939383, guid: e4c0380fb6eb8be45b7005945f04f075, type: 3}

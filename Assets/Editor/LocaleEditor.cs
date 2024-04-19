@@ -9,8 +9,8 @@ using UnityEngine.Localization.Tables;
 
 public class LocalizationEditor : EditorWindow
 {
-    string tableName = "Narration";
-    string key = "Your Key";
+    string tableName;
+    string key;
     Dictionary<LocaleIdentifier, string> stringValues = new Dictionary<LocaleIdentifier, string>();
     Dictionary<LocaleIdentifier, AudioClip> assetValues = new Dictionary<LocaleIdentifier, AudioClip>();
 

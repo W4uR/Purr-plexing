@@ -3,18 +3,20 @@ using UnityEngine.EventSystems;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(LocalizeStringEvent))]
 [RequireComponent(typeof(LocalizeAudioClipEvent))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Button))]
 public class ButtonNarrator : MonoBehaviour, ISelectHandler
 {
-    private AudioSource source;
-    private void Awake()
+    private AudioSource _audioSource;
+    private void Start()
     {
-        source = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
+
     public void OnSelect(BaseEventData eventData)
     {
-        source.Play();
+        _audioSource.Play();
     }
 }

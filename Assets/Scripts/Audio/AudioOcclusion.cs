@@ -6,7 +6,7 @@ public class AudioOcclusion : MonoBehaviour
 {
     private AudioSource audioSource;
     private AudioLowPassFilter lowPassFilter;
-    private Transform Listener;
+    private Transform _listener;
 
     [Header("Occlusion Options")]
     [SerializeField]
@@ -24,13 +24,13 @@ public class AudioOcclusion : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         lowPassFilter = GetComponent<AudioLowPassFilter>();
-        Listener = GameObject.FindGameObjectWithTag("Player").transform;
+        _listener = Camera.main.transform;
     }
 
     private void FixedUpdate()
     {
         if (!audioSource.isVirtual && audioSource.isPlaying)
-            OccludeBetween(transform.position, Listener.position);
+            OccludeBetween(transform.position, _listener.position);
         lineCastHitCount = 0f;
     }
 
