@@ -208,5 +208,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385897c0e65faa94eba8fe65ddcc878e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 858598574, guid: cc313a776920a4e4397e441858569f0d, type: 3}
-  displaySpace: 0
+  icon: {fileID: 1309645470, guid: e4c0380fb6eb8be45b7005945f04f075, type: 3}
+  audioSource: {fileID: 6273706485058332541}

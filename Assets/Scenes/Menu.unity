@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1339149853}
     m_Modifications:
+    - target: {fileID: 141618019691056156, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1401451163273729236, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_Name
       value: Quit Button
@@ -223,6 +227,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4681239639387111694, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 21066814717431808
@@ -242,6 +254,10 @@ PrefabInstance:
     - target: {fileID: 6970138899423250048, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_fontSize
       value: 45.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_LocalizedAssetReference.m_TableEntryReference.m_KeyId
@@ -273,6 +289,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1339149853}
     m_Modifications:
+    - target: {fileID: 141618019691056156, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1401451163273729236, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_Name
       value: Level Selection Button
@@ -369,6 +389,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4681239639387111694, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 0
@@ -400,6 +428,10 @@ PrefabInstance:
     - target: {fileID: 6970138899423250048, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_fontSize
       value: 37.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_LocalizedAssetReference.m_TableEntryReference.m_KeyId
@@ -864,6 +896,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1339149853}
     m_Modifications:
+    - target: {fileID: 141618019691056156, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1401451163273729236, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_Name
       value: Start Tutorial Button
@@ -964,6 +1000,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4681239639387111694, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 21067025607036928
@@ -991,6 +1035,10 @@ PrefabInstance:
     - target: {fileID: 6970138899423250048, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_fontSize
       value: 38.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_LocalizedAssetReference.m_TableEntryReference.m_KeyId
@@ -1028,6 +1076,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1339149853}
     m_Modifications:
+    - target: {fileID: 141618019691056156, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1401451163273729236, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_Name
       value: New Game Button
@@ -1124,6 +1176,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 4681239639387111694, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4728121892148301681, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 0
@@ -1155,6 +1215,10 @@ PrefabInstance:
     - target: {fileID: 6970138899423250048, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_fontSize
       value: 45.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247425943539811641, guid: f607bb25c6a001c4ea487c7e85f2eb92, type: 3}
       propertyPath: m_LocalizedAssetReference.m_TableEntryReference.m_KeyId

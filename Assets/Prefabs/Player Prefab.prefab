@@ -550,8 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b4c3b445fa1a643a70e845ab0869fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _catPickUpSoundSFX: {fileID: 0}
-  _audioSource: {fileID: 4069030150202990550}
+  catPickUpSoundSFX: {fileID: 11400000, guid: 6bce278a69955164db748128151d93ba, type: 2}
+  audioSource: {fileID: 4069030150202990550}
 --- !u!114 &7747780885261800760
 MonoBehaviour:
   m_ObjectHideFlags: 0

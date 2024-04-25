@@ -8,12 +8,13 @@ using UnityEngine.Audio;
 public class DisplayableAudio : MonoBehaviour
 {
     [SerializeField]
-    private Sprite _icon;
+    private Sprite icon;
+    [SerializeField]
+    private AudioSource audioSource;
 
-    private AudioSource _audioSource;
-
-    public Sprite GetIcon() => _icon;
-    public float GetClarity() =>_audioSource.volume;
+    public Sprite Icon => icon;
+    public float Clarity =>audioSource.volume;
+    public bool Active => !audioSource.isVirtual && audioSource.isPlaying;
 
 
     private void OnDestroy()
@@ -23,17 +24,6 @@ public class DisplayableAudio : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();
-    }
-    private void FixedUpdate()
-    {
-        if (_audioSource.isVirtual || !_audioSource.isPlaying)
-        {
-            Compass.DetachAudio(this);
-        }
-        else
-        {
-            Compass.AttachAudio(this);
-        }
+        Compass.AttachAudio(this);
     }
 }

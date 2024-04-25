@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class BreezAudioPlayer : MonoBehaviour
+public class BreezeAudioPlayer : MonoBehaviour
 {
     [SerializeField]
     private AudioSource _leftBreezeSource;
@@ -51,8 +47,7 @@ public class BreezAudioPlayer : MonoBehaviour
 
     private void HandleBreezeDisplay()
     {
-        BreezeDisplay.SetLeft(_leftBreezeSource.volume);
-        BreezeDisplay.SetRight(_rightBreezeSource.volume);
+        
     }
 
     public float WallDistanceToDirection(RelativeDirection direction)

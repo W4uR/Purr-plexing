@@ -5,76 +5,80 @@ using UnityEngine.UI;
 
 public class Compass : MonoBehaviour
 {
-
-    [Range(0.6f,1.6f)]
     [SerializeField]
-    private float _iconRadius = 1f;
+    private Image iconPrefab;
 
-    [SerializeField]
-    private Image _iconPrefab;
+    private Transform listener;
+    private float calculatedIconRadius;
 
-    private Transform _listener;
-    private static Compass _instance;
-    private static Dictionary<DisplayableAudio, Image> _audiosToDisplay;
-    private float _calculatedIconRadius;
+    private static Compass s_instance;
+    private static Dictionary<DisplayableAudio, Image> s_audiosToDisplay;
 
     private void Awake()
     {
-        _instance = this;
-        _audiosToDisplay = new Dictionary<DisplayableAudio, Image>();
+        s_instance = this;
+        s_audiosToDisplay = new Dictionary<DisplayableAudio, Image>();
     }
 
     private void Start()
     {
-        _listener = Camera.main.transform;
-        _calculatedIconRadius = _iconRadius * ((RectTransform)transform).sizeDelta.x * 0.5f;
+        listener = Camera.main.transform;
+        calculatedIconRadius = ((RectTransform)transform).sizeDelta.x * 0.6f;
     }
 
-    void Update()
+    void LateUpdate()
     {
-        _calculatedIconRadius = _iconRadius * ((RectTransform)transform).sizeDelta.x * 0.5f;
         RenderAudios();
     }
 
     public static void AttachAudio(DisplayableAudio dp)
     {
-        if (_audiosToDisplay.ContainsKey(dp)) return;
+        if (s_audiosToDisplay.ContainsKey(dp)) return;
 
-        var iconObject = Instantiate(_instance._iconPrefab, _instance.transform);
-        iconObject.sprite = dp.GetIcon();
-        _audiosToDisplay.Add(dp, iconObject);
+        var iconObject = Instantiate(s_instance.iconPrefab, s_instance.transform);
+        iconObject.enabled = false;
+        iconObject.sprite = dp.Icon;
+        s_audiosToDisplay.Add(dp, iconObject);
     }
 
     public static void DetachAudio(DisplayableAudio dp)
     {
-        Destroy(_audiosToDisplay[dp]);
-        _audiosToDisplay.Remove(dp);
+        s_audiosToDisplay[dp].enabled = false;
+        Destroy(s_audiosToDisplay[dp]);
+        s_audiosToDisplay.Remove(dp);
     }
-
+    
     private void RenderAudios()
     {
-        foreach (var pair in _audiosToDisplay)
+        foreach (var pair in s_audiosToDisplay)
         {
+
+            pair.Value.enabled = pair.Key.Active;
+            
+            if (!pair.Key.Active)
+                continue;
+            
             RectTransform rt = (RectTransform)pair.Value.transform;
 
-            Vector3 dirVector = (pair.Key.transform.position - _listener.position);
+            Vector3 dirVector = Vector3.ProjectOnPlane(pair.Key.transform.position - listener.position, Vector3.up);
+            
 
             if (dirVector.magnitude < 0.5f) // Egy mezõn vagyunk
             {
                 rt.anchoredPosition = Vector2.zero;
-                rt.localScale = Vector3.one*1.3f;
+                rt.localScale = Vector3.one * 1.3f;
                 pair.Value.color = Color.green;
-                return;
+                continue;
             }
 
-            float radians = Vector3.SignedAngle(_listener.right, dirVector, Vector3.down) * Mathf.Deg2Rad;
-            float x = Mathf.Cos(radians)* _calculatedIconRadius;
-            float y = Mathf.Sin(radians)* _calculatedIconRadius;
+            float radians = Vector3.SignedAngle(listener.right, dirVector,Vector3.down) * Mathf.Deg2Rad;
+            float x = Mathf.Cos(radians)* calculatedIconRadius;
+            float y = Mathf.Sin(radians)* calculatedIconRadius;
 
             rt.anchoredPosition = new Vector2(x, y);
-            rt.localScale = Vector3.one * pair.Key.GetClarity();
+            rt.localScale = Vector3.one * pair.Key.Clarity;
 
-            if(pair.Key.GetClarity() < 1f)
+            if(pair.Key.Clarity < 1f)
             {
                 pair.Value.color = Color.white;
             }
@@ -84,4 +88,5 @@ public class Compass : MonoBehaviour
             }
         }
     }
+
 }
