@@ -25,7 +25,8 @@ MonoBehaviour:
   - m_GUID: e499f07235fe5ea4abe455fc961e902e
     m_Address: Assets/Localization
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: abdd5de7d7a22f841855a6e3e7cede30
     m_Address: Assets/Audio

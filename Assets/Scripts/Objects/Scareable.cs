@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerMotor))]
 public class Scareable : MonoBehaviour
 {
     [Header("Config")]

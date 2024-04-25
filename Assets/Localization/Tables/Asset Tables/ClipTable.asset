@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4db626ad063b13545924a9839ac5fa83, type: 3}
-  m_Name: UI
+  m_Name: ClipTable
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: ef512e4f07bd467489fd9e2b14e94112, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: ec6e802e453e919458ad4442d5b3f43d, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 29b7f7710c840ad41b8401c56272746f, type: 2}
-  - {fileID: 11400000, guid: 14916db813960c246afc2e5e1656d018, type: 2}
+  - {fileID: 11400000, guid: f8f8708e4fb5d544e819b2f5222a1032, type: 2}
+  - {fileID: 11400000, guid: b35914aeacec4a94abea148084cedc81, type: 2}
   m_Extensions: []
   m_Group: Asset Table
   references:

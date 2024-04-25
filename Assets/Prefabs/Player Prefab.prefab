@@ -500,7 +500,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2800000, guid: 729c547351b862045b91781ae2c0f62d, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -564,47 +564,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4456a7b8f11681479fbfa1874bfe317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftBreezeSource: {fileID: 2210442616599161082}
-  RightBreezeSource: {fileID: 7891584454759889141}
-  volumeFunction:
+  _leftBreezeSource: {fileID: 2210442616599161082}
+  _rightBreezeSource: {fileID: 7891584454759889141}
+  _volumeFunction:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 1
+      time: 0
       value: 0
-      inSlope: 0.06
-      outSlope: 0.06
+      inSlope: 0.30666667
+      outSlope: 0.30666667
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 3
-      value: 0.12
-      inSlope: -Infinity
-      outSlope: -Infinity
-      tangentMode: 1
+      time: 0.75
+      value: 0.23
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.07441403
     - serializedVersion: 3
-      time: 5
+      time: 2.75
       value: 0.46
-      inSlope: -Infinity
-      outSlope: -Infinity
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    - serializedVersion: 3
-      time: 6
-      value: 0.8
-      inSlope: 0.34
-      outSlope: 0.34
-      tangentMode: 34
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 4.75
+      value: 0.68
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 7
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 6.75
+      value: 1
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 8
+      value: 1
+      inSlope: Infinity
+      outSlope: 0
+      tangentMode: 7
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

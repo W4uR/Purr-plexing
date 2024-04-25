@@ -17,25 +17,13 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 051ffb7e562fc904aa393fcdf65eee55
   m_SerializeEntries:
-  - m_GUID: ba9eb2e4d88a7e24b8af39b347223865
-    m_Address: Assets/Localization/UI Table Shared Data.asset
+  - m_GUID: dcd87e0729ce19541aa296c167a1334f
+    m_Address: Assets/Localization/Tables/String Tables/StringTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ef512e4f07bd467489fd9e2b14e94112
-    m_Address: Assets/Localization/UI Narrator Table Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9663b956fa02a9f45afb5ae7f4dc2ed2
-    m_Address: Assets/Localization/Tables/String Tables/Narration/Narration Shared
-      Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 813d306486ca0734fba48adc5708b5b2
-    m_Address: Assets/Localization/Tables/Asset Tables/Narration/Narration Shared
-      Data.asset
+  - m_GUID: ec6e802e453e919458ad4442d5b3f43d
+    m_Address: Assets/Localization/Tables/ClipTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

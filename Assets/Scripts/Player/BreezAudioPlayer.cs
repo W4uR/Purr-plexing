@@ -7,59 +7,76 @@ using UnityEngine;
 public class BreezAudioPlayer : MonoBehaviour
 {
     [SerializeField]
-    AudioSource LeftBreezeSource;
+    private AudioSource _leftBreezeSource;
     [SerializeField]
-    AudioSource RightBreezeSource;
+    private AudioSource _rightBreezeSource;
     [SerializeField]
-    AnimationCurve volumeFunction;
+    private AnimationCurve _volumeFunction;
 
     private void FixedUpdate()
     {
         HandleBreezeAudio();
+        HandleBreezeDisplay();
     }
 
-    void HandleBreezeAudio()
+
+    private void HandleBreezeAudio()
     {
-        float leftBreezeVolume = volumeFunction.Evaluate(DistanceToLeftWall());
+        float leftBreezeVolume = _volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.LEFT));
 
         if (leftBreezeVolume != 0f)
         {
-            LeftBreezeSource.volume = leftBreezeVolume;
-            if (!LeftBreezeSource.isPlaying)
-                LeftBreezeSource.Play();
+            _leftBreezeSource.volume = leftBreezeVolume; 
+            if (!_leftBreezeSource.isPlaying)
+                _leftBreezeSource.Play();
         }
         else
         {
-            LeftBreezeSource.Pause();
+            _leftBreezeSource.Pause();
         }
 
 
-        float rightBreezeVolume = volumeFunction.Evaluate(DistanceToRightWall());
+        float rightBreezeVolume = _volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.RIGHT));
         if (rightBreezeVolume != 0f)
         {
-            RightBreezeSource.volume = rightBreezeVolume;
-            if (!RightBreezeSource.isPlaying)
-                RightBreezeSource.Play();
+            _rightBreezeSource.volume = rightBreezeVolume;
+            if (!_rightBreezeSource.isPlaying)
+                _rightBreezeSource.Play();
         }
         else
         {
-            RightBreezeSource.Pause();
+            _rightBreezeSource.Pause();
         }
     }
 
-    public float DistanceToLeftWall()
+    private void HandleBreezeDisplay()
     {
-        Ray ray = new Ray(LeftBreezeSource.transform.position, -transform.right);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit);
-        return hit.distance;
+        BreezeDisplay.SetLeft(_leftBreezeSource.volume);
+        BreezeDisplay.SetRight(_rightBreezeSource.volume);
     }
 
-    public float DistanceToRightWall()
+    public float WallDistanceToDirection(RelativeDirection direction)
     {
-        Ray ray = new Ray(RightBreezeSource.transform.position, transform.right);
+        Ray ray;
+        switch (direction)
+        {
+            case RelativeDirection.FORWARD:
+                ray = new Ray(_rightBreezeSource.transform.position, transform.forward);
+                break;
+            case RelativeDirection.RIGHT:
+                ray = new Ray(_rightBreezeSource.transform.position, transform.right);
+                break;
+            case RelativeDirection.BACK:
+                ray = new Ray(_rightBreezeSource.transform.position, -transform.forward);
+                break;
+            case RelativeDirection.LEFT:
+            default:
+                ray = new Ray(_rightBreezeSource.transform.position, -transform.right);
+                break;
+        }
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         return hit.distance;
+
     }
 }

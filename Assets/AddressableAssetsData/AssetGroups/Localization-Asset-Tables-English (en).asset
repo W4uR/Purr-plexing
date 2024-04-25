@@ -17,15 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6a9f22807d2c65b408211481b2eda86d
   m_SerializeEntries:
-  - m_GUID: 29b7f7710c840ad41b8401c56272746f
-    m_Address: UI_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 0134e3b10abe02445bde57c91d503142
-    m_Address: Voice Lines_en
+  - m_GUID: f8f8708e4fb5d544e819b2f5222a1032
+    m_Address: ClipTable_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

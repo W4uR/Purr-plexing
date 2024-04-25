@@ -17,15 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c9dfe224966172a41a1ce12e0f41080e
   m_SerializeEntries:
-  - m_GUID: 14916db813960c246afc2e5e1656d018
-    m_Address: UI_hu
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-hu
-    - Preload
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: da56410a88a2308428b7a158598448f6
-    m_Address: Voice Lines_hu
+  - m_GUID: b35914aeacec4a94abea148084cedc81
+    m_Address: ClipTable_hu
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-hu
