@@ -460,6 +460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e28167548ff9f647a79e29d3dced2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftBreezeImage: {fileID: 1294494497}
+  rightBreezeImage: {fileID: 1043576875}
+  breezeIcons:
+  - {fileID: 233329817, guid: edb22a2d324901f46857eaaeb27f5f8a, type: 3}
+  - {fileID: -955665365, guid: edb22a2d324901f46857eaaeb27f5f8a, type: 3}
+  - {fileID: 833038792, guid: edb22a2d324901f46857eaaeb27f5f8a, type: 3}
+  - {fileID: 59752563, guid: edb22a2d324901f46857eaaeb27f5f8a, type: 3}
 --- !u!1001 &896102412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -586,7 +593,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 233329817, guid: edb22a2d324901f46857eaaeb27f5f8a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -713,7 +720,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 233329817, guid: edb22a2d324901f46857eaaeb27f5f8a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

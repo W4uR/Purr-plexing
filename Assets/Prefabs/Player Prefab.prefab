@@ -275,10 +275,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 5
+  MaxDistance: 10
   Pan2D: -1
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -404,10 +404,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 5
+  MaxDistance: 10
   Pan2D: 1
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -513,7 +513,7 @@ Transform:
   m_GameObject: {fileID: 6836474202132572109}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -564,32 +564,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4456a7b8f11681479fbfa1874bfe317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftBreezeSource: {fileID: 2210442616599161082}
-  _rightBreezeSource: {fileID: 7891584454759889141}
-  _volumeFunction:
+  leftBreezeSource: {fileID: 2210442616599161082}
+  rightBreezeSource: {fileID: 7891584454759889141}
+  volumeFunction:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0.30666667
-      outSlope: 0.30666667
-      tangentMode: 34
+      inSlope: 0
+      outSlope: Infinity
+      tangentMode: 97
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
       time: 0.75
-      value: 0.23
+      value: 0.2
       inSlope: Infinity
       outSlope: Infinity
       tangentMode: 103
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.07441403
+      outWeight: 0
     - serializedVersion: 3
-      time: 2.75
-      value: 0.46
+      time: 1.75
+      value: 0.4
       inSlope: Infinity
       outSlope: Infinity
       tangentMode: 103
@@ -597,17 +597,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4.75
-      value: 0.68
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 7
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 6.75
-      value: 1
+      time: 3.75
+      value: 0.6
       inSlope: Infinity
       outSlope: Infinity
       tangentMode: 103
@@ -615,13 +606,22 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 8
+      time: 5.75
+      value: 0.8
+      inSlope: Infinity
+      outSlope: Infinity
+      tangentMode: 103
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 8.75
       value: 1
       inSlope: Infinity
-      outSlope: 0
-      tangentMode: 7
+      outSlope: Infinity
+      tangentMode: 103
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -894,7 +894,7 @@ Transform:
   m_GameObject: {fileID: 7373066816018404328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -911,7 +911,7 @@ Camera:
   m_GameObject: {fileID: 7373066816018404328}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

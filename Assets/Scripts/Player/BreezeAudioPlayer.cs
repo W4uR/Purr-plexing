@@ -3,11 +3,11 @@ using UnityEngine;
 public class BreezeAudioPlayer : MonoBehaviour
 {
     [SerializeField]
-    private AudioSource _leftBreezeSource;
+    private AudioSource leftBreezeSource;
     [SerializeField]
-    private AudioSource _rightBreezeSource;
+    private AudioSource rightBreezeSource;
     [SerializeField]
-    private AnimationCurve _volumeFunction;
+    private AnimationCurve volumeFunction;
 
     private void FixedUpdate()
     {
@@ -18,36 +18,35 @@ public class BreezeAudioPlayer : MonoBehaviour
 
     private void HandleBreezeAudio()
     {
-        float leftBreezeVolume = _volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.LEFT));
-
-        if (leftBreezeVolume != 0f)
+        leftBreezeSource.volume = volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.LEFT)); ;
+        leftBreezeSource.pitch = leftBreezeSource.volume;
+        if (leftBreezeSource.volume != 0f)
         {
-            _leftBreezeSource.volume = leftBreezeVolume; 
-            if (!_leftBreezeSource.isPlaying)
-                _leftBreezeSource.Play();
+            if (!leftBreezeSource.isPlaying)
+                leftBreezeSource.Play();
         }
         else
         {
-            _leftBreezeSource.Pause();
+            leftBreezeSource.Pause();
         }
 
-
-        float rightBreezeVolume = _volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.RIGHT));
-        if (rightBreezeVolume != 0f)
+        rightBreezeSource.volume = volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.RIGHT));
+        rightBreezeSource.pitch = rightBreezeSource.volume;
+        if (rightBreezeSource.volume != 0f)
         {
-            _rightBreezeSource.volume = rightBreezeVolume;
-            if (!_rightBreezeSource.isPlaying)
-                _rightBreezeSource.Play();
+            if (!rightBreezeSource.isPlaying)
+                rightBreezeSource.Play();
         }
         else
         {
-            _rightBreezeSource.Pause();
+            rightBreezeSource.Pause();
         }
     }
 
     private void HandleBreezeDisplay()
     {
-        
+        BreezeDisplay.DisplayLeft(leftBreezeSource.volume);
+        BreezeDisplay.DisplayRight(rightBreezeSource.volume);
     }
 
     public float WallDistanceToDirection(RelativeDirection direction)
@@ -56,17 +55,17 @@ public class BreezeAudioPlayer : MonoBehaviour
         switch (direction)
         {
             case RelativeDirection.FORWARD:
-                ray = new Ray(_rightBreezeSource.transform.position, transform.forward);
+                ray = new Ray(transform.position, transform.forward);
                 break;
             case RelativeDirection.RIGHT:
-                ray = new Ray(_rightBreezeSource.transform.position, transform.right);
+                ray = new Ray(transform.position, transform.right);
                 break;
             case RelativeDirection.BACK:
-                ray = new Ray(_rightBreezeSource.transform.position, -transform.forward);
+                ray = new Ray(transform.position, -transform.forward);
                 break;
             case RelativeDirection.LEFT:
             default:
-                ray = new Ray(_rightBreezeSource.transform.position, -transform.right);
+                ray = new Ray(transform.position, -transform.right);
                 break;
         }
         RaycastHit hit;
