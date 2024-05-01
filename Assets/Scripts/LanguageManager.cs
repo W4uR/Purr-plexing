@@ -23,8 +23,6 @@ public class LanguageManager : MonoBehaviour
             PlayerPrefs.SetInt(LANGUAGE_KEY, LocalizationSettings.AvailableLocales.Locales.IndexOf(LocalizationSettings.SelectedLocale));
         }
         StartCoroutine(SetLanguage(PlayerPrefs.GetInt(LANGUAGE_KEY, 0)));
-        Debug.Log(System.Globalization.CultureInfo.CurrentUICulture);
-        Debug.Log(LocalizationSettings.AvailableLocales.Locales[1]);
     }
 
     public void OnChangeLanguageClicked()

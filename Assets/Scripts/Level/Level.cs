@@ -120,7 +120,7 @@ public class Level : MonoBehaviour
                 else if (newObject.CompareTag("Spawn"))
                 {
                     var player = GameObject.FindGameObjectWithTag("Player").transform;
-                    player.SetPositionAndRotation(worldPosition, Quaternion.Euler(Vector3.zero));
+                    player.SetPositionAndRotation(newObject.transform.position, Quaternion.Euler(Vector3.zero));
                 }
             }
         }

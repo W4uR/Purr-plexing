@@ -255,6 +255,45 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UI"",
+            ""id"": ""ae140e4d-80f9-4742-85f3-81ed0ea14985"",
+            ""actions"": [
+                {
+                    ""name"": ""TogglePauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""b482dab8-10f6-4d8e-8366-33f258186d69"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b2b364d2-423d-4a95-bdc3-442be7e347c1"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""TogglePauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42c5b816-8708-429f-b05c-aa8a21ddad36"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""TogglePauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -287,6 +326,9 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
         m_Player_MoveForward = m_Player.FindAction("Move Forward", throwIfNotFound: true);
         m_Player_Turning = m_Player.FindAction("Turning", throwIfNotFound: true);
         m_Player_Whistle = m_Player.FindAction("Whistle", throwIfNotFound: true);
+        // UI
+        m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
+        m_UI_TogglePauseMenu = m_UI.FindAction("TogglePauseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -406,6 +448,52 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // UI
+    private readonly InputActionMap m_UI;
+    private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
+    private readonly InputAction m_UI_TogglePauseMenu;
+    public struct UIActions
+    {
+        private @Bindings m_Wrapper;
+        public UIActions(@Bindings wrapper) { m_Wrapper = wrapper; }
+        public InputAction @TogglePauseMenu => m_Wrapper.m_UI_TogglePauseMenu;
+        public InputActionMap Get() { return m_Wrapper.m_UI; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsCallbackInterfaces.Add(instance);
+            @TogglePauseMenu.started += instance.OnTogglePauseMenu;
+            @TogglePauseMenu.performed += instance.OnTogglePauseMenu;
+            @TogglePauseMenu.canceled += instance.OnTogglePauseMenu;
+        }
+
+        private void UnregisterCallbacks(IUIActions instance)
+        {
+            @TogglePauseMenu.started -= instance.OnTogglePauseMenu;
+            @TogglePauseMenu.performed -= instance.OnTogglePauseMenu;
+            @TogglePauseMenu.canceled -= instance.OnTogglePauseMenu;
+        }
+
+        public void RemoveCallbacks(IUIActions instance)
+        {
+            if (m_Wrapper.m_UIActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActions @UI => new UIActions(this);
     private int m_ControllerSchemeIndex = -1;
     public InputControlScheme ControllerScheme
     {
@@ -429,5 +517,9 @@ public partial class @Bindings: IInputActionCollection2, IDisposable
         void OnMoveForward(InputAction.CallbackContext context);
         void OnTurning(InputAction.CallbackContext context);
         void OnWhistle(InputAction.CallbackContext context);
+    }
+    public interface IUIActions
+    {
+        void OnTogglePauseMenu(InputAction.CallbackContext context);
     }
 }

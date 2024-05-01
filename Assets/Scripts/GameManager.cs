@@ -9,6 +9,28 @@ public class GameManager : Singleton<GameManager>
     // At some point this should be  a seperate GameConig file or something like that
     public static bool VisualAids { get; internal set; } = true;
 
+
+
+    private static bool isPaused;
+    public static bool IsPaused {
+        get { return isPaused; }
+        set
+        {
+            isPaused = value;
+            if(PausedChanged != null)
+                PausedChanged.Invoke(value);
+        }
+    }
+
+    public static event Action<bool> PausedChanged;
+
+    public void OnTogglePauseMenu()
+    {
+        Debug.Log("ESC key has been fiddled with.");
+        IsPaused = !IsPaused;
+    }
+
+
     private int _levelToLoad;
 
     private void OnEnable()
