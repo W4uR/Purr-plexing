@@ -17,7 +17,31 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: dcd87e0729ce19541aa296c167a1334f, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 2197626179555328
+    m_Localized: "F\u0151men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2203442035036160
+    m_Localized: "\xDAj j\xE1t\xE9k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2212207216037888
+    m_Localized: "Kil\xE9p\xE9s az asztalra"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2220931800371200
+    m_Localized: "J\xE1t\xE9k folytat\xE1sa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2221491119198208
+    m_Localized: "P\xE1lya v\xE1laszt\xE1s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2222359776333824
+    m_Localized: "Be\xE1ll\xEDt\xE1sok"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

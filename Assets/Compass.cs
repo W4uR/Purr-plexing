@@ -43,7 +43,6 @@ public class Compass : MonoBehaviour
 
     public static void DetachAudio(DisplayableAudio dp)
     {
-        s_audiosToDisplay[dp].enabled = false;
         Destroy(s_audiosToDisplay[dp]);
         s_audiosToDisplay.Remove(dp);
     }

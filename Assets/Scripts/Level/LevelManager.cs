@@ -24,6 +24,11 @@ public class LevelManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        LoadLevel(GameManager.Instance.LevelToLoad);
+    }
+
     public static int GetNumberOfCatsOnCurrentLevel()
     {
         return CurrentLevel.CatsOnLevel;
@@ -36,6 +41,10 @@ public class LevelManager : MonoBehaviour
 
     public static void LoadLevel(int levelIndex)
     {
+        if(PlayerPrefs.GetInt(Utility.PlayerPrefKey.UNLOCKED_LEVELS.ToString(),0) < levelIndex)
+        {
+            PlayerPrefs.SetInt(Utility.PlayerPrefKey.UNLOCKED_LEVELS.ToString(), levelIndex);
+        }
         currentLevelIndex = levelIndex;
         CurrentLevel = instance.levels[currentLevelIndex];
         CurrentLevel.Initialize(instance.levelParent);

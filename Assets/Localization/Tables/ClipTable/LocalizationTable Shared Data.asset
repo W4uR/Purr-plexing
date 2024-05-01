@@ -14,9 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: LocalizationTable
   m_TableCollectionNameGuidString: ec6e802e453e919458ad4442d5b3f43d
-  m_Entries: []
+  m_Entries:
+  - m_Id: 2198394915786752
+    m_Key: ui.main_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2203943204032512
+    m_Key: ui.new_game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2211977305264128
+    m_Key: ui.quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2220970354413568
+    m_Key: ui.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2222058625306624
+    m_Key: ui.level_selection.button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2222365849686016
+    m_Key: ui.settings.button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 5475537153747583036
   m_KeyGenerator:
     rid: 2799286810266566742
   references:
@@ -26,3 +51,33 @@ MonoBehaviour:
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
         m_CustomEpoch: 1714040135243
+    - rid: 5475537153747583036
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 2198394915786752
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 2203943204032512
+          m_TableCodes:
+          - hu
+          - en
+        - m_KeyId: 2211977305264128
+          m_TableCodes:
+          - hu
+          - en
+        - m_KeyId: 2220970354413568
+          m_TableCodes:
+          - hu
+          - en
+        - m_KeyId: 2222058625306624
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 2222365849686016
+          m_TableCodes:
+          - hu
+          - en
+        m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null

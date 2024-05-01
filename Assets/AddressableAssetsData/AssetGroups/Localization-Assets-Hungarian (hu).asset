@@ -16,7 +16,25 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 431cc44ce106539409728df598e48786
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3ce7dacf13ab79e4c9296ffedd95adc5
+    m_Address: hu_ui.new_game
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37e02c98d5335ba4297cb27f00bd19e9
+    m_Address: hu_ui.level_selection.button
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b38e117d65e12994cb6ee9e65f4910cd
+    m_Address: hu_ui.settings.button
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

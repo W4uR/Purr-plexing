@@ -16,7 +16,43 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 36eae0c3d7125f14491dd064a6b246f0
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 19e608f6685ceb64c9d3451f4ad68f24
+    m_Address: en_ui.new_game
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7feb52859aa1fa4796bd46f1376c12e
+    m_Address: en_ui.main_menu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6be758407e8356c4fa0709d07384b5dd
+    m_Address: en_ui.quit
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1bec1c6e3964f5439cdfb0db76672f5
+    m_Address: en_ui.continue
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce6b576549c027c4aba434ae56f338f9
+    m_Address: en_ui.level_selection.button
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4186442577721b4a83620cbc2c23bd9
+    m_Address: en_ui.settings.button
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

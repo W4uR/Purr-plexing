@@ -7,16 +7,21 @@ using UnityEngine.UI;
 [RequireComponent(typeof(LocalizeAudioClipEvent))]
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Button))]
-public class ButtonNarrator : MonoBehaviour, ISelectHandler
+public class ButtonNarrator : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
-    private AudioSource _audioSource;
-    private void Start()
+    private AudioSource audioSource;
+    private void Awake()
     {
-        _audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnSelect(BaseEventData eventData)
     {
-        _audioSource.Play();
+       audioSource.Play();
+    }
+
+    public void OnDeselect(BaseEventData eventData)
+    {
+        audioSource.Stop();
     }
 }

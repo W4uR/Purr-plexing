@@ -2,7 +2,11 @@ using UnityEngine;
 
 public static class Utility
 {
-
+    public enum PlayerPrefKey
+    {
+        UNLOCKED_LEVELS,
+        LANGUAGE
+    }
 }
 
 public static class Extensions
