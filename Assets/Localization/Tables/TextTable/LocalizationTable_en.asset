@@ -42,6 +42,34 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
+  - m_Id: 3046267693830144
+    m_Localized: Master volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047313505783808
+    m_Localized: Settings menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246410514829312
+    m_Localized: Voice volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246720943656960
+    m_Localized: Breeze volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246989584633856
+    m_Localized: Cat volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3247221777108992
+    m_Localized: Bird volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3257976467492864
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

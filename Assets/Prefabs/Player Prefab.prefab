@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 2857289817598786224}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8368713286951850700, guid: 9caafb436d2b1e442b71f7b6b8ab9a51, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -263,7 +263,7 @@ AudioSource:
   m_GameObject: {fileID: 4296206303117870945}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6872231781620166369, guid: 9caafb436d2b1e442b71f7b6b8ab9a51, type: 2}
   m_audioClip: {fileID: 8300000, guid: 572c15da86122be43bd942f3d7ac96d5, type: 3}
   m_Resource: {fileID: 8300000, guid: 572c15da86122be43bd942f3d7ac96d5, type: 3}
   m_PlayOnAwake: 0
@@ -392,7 +392,7 @@ AudioSource:
   m_GameObject: {fileID: 6601533788410216362}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6872231781620166369, guid: 9caafb436d2b1e442b71f7b6b8ab9a51, type: 2}
   m_audioClip: {fileID: 8300000, guid: 572c15da86122be43bd942f3d7ac96d5, type: 3}
   m_Resource: {fileID: 8300000, guid: 572c15da86122be43bd942f3d7ac96d5, type: 3}
   m_PlayOnAwake: 0
@@ -535,7 +535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whislteCooldown: 1.5
-  whislteVolume: 0.54
   whistles: {fileID: 11400000, guid: c15b5f78156660044b884c5737b17676, type: 2}
   audioSource: {fileID: 4069030150202990550}
 --- !u!114 &5968695279613958878
@@ -552,6 +551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catPickUpSoundSFX: {fileID: 11400000, guid: 6bce278a69955164db748128151d93ba, type: 2}
   audioSource: {fileID: 4069030150202990550}
+  catTag: Cat
+  destinationTag: Van
 --- !u!114 &7747780885261800760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836474202132572109}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4456a7b8f11681479fbfa1874bfe317, type: 3}
   m_Name: 
@@ -653,7 +654,7 @@ AudioSource:
   m_GameObject: {fileID: 6836474202132572109}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8949800354762349966, guid: 9caafb436d2b1e442b71f7b6b8ab9a51, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -814,6 +815,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8676d396-25c7-4fef-9a7d-d5d331a33f2c
     m_ActionName: 'Player/Cat Call[/Keyboard/space,/Mouse/scroll/down]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b482dab8-10f6-4d8e-8366-33f258186d69
+    m_ActionName: 'UI/TogglePauseMenu[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -878,6 +883,7 @@ GameObject:
   - component: {fileID: 276343161826887722}
   - component: {fileID: 5278906242765495185}
   - component: {fileID: 7492871051511795656}
+  - component: {fileID: 8291357457577127866}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -961,3 +967,26 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7373066816018404328}
   m_Enabled: 1
+--- !u!164 &8291357457577127866
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373066816018404328}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: 0
+  m_DecayTime: 2.91
+  m_DecayHFRatio: 1.3
+  m_ReflectionsLevel: -602
+  m_ReverbLevel: -302
+  m_ReverbDelay: 0.022
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 9

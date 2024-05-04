@@ -9,9 +9,6 @@ public class CatWhistler : MonoBehaviour
     [Range(0.5f, 5f)]
     private float whislteCooldown = 1f;
     [SerializeField]
-    [Range(0.2f, 1f)]
-    private float whislteVolume = 0.8f;
-    [SerializeField]
     private AudioGroup whistles;
     [SerializeField]
     AudioSource audioSource;
@@ -33,7 +30,7 @@ public class CatWhistler : MonoBehaviour
     private IEnumerator Whistle()
     {
         canWhistle = false;
-        audioSource.PlayOneShot(whistles.GetRandomClip(),whislteVolume);
+        audioSource.PlayOneShot(whistles.GetRandomClip());
         CallingCats.Invoke(transform.position);
         yield return new WaitForSeconds(whislteCooldown);
         canWhistle = true;

@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Spawn
   - Cat
-  - Nest
   - Duck Trap
+  - Van
   layers:
   - Default
   - TransparentFX

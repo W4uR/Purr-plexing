@@ -23,6 +23,9 @@ public class PlayerMotor : MonoBehaviour
         if (_isMoving) return;
 
         Vector3 endPosition = transform.position + transform.forward;
+        Debug.Log("Endpos: " + endPosition.z);
+        Debug.Log("position: " + transform.position);
+        Debug.Log("forward: " + transform.forward);
 
         if (LevelManager.CurrentLevel.GetCell(endPosition) == null) return;
 
@@ -53,7 +56,9 @@ public class PlayerMotor : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        transform.position = endPosition;
+        //Enélkül a koordináta nagyon közeli lehet egy egész számhoz, de nem egész (0-nál jött elõ a Z koordináta esetében) És emiatt nem lehetett hallani a macskát
+        // A mozgást lehet újra kéne gondolni és a végpoziciót, nem így meghatározni
+        transform.position = endPosition.RoundXZ(); 
         _isMoving = false;
     }
 

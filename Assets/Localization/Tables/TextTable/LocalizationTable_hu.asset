@@ -42,6 +42,34 @@ MonoBehaviour:
     m_Localized: "Be\xE1ll\xEDt\xE1sok"
     m_Metadata:
       m_Items: []
+  - m_Id: 3046267693830144
+    m_Localized: "Mester hanger\u0151"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047313505783808
+    m_Localized: "Be\xE1ll\xEDt\xE1sok men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246410514829312
+    m_Localized: "Besz\xE9d hanger\u0151"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246720943656960
+    m_Localized: "Szell\u0151 hanger\u0151"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246989584633856
+    m_Localized: "Macska hanger\u0151"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3247221777108992
+    m_Localized: "Mad\xE1r hanger\u0151"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3257976467492864
+    m_Localized: Vissza
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

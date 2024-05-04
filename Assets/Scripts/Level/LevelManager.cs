@@ -41,9 +41,9 @@ public class LevelManager : MonoBehaviour
 
     public static void LoadLevel(int levelIndex)
     {
-        if(PlayerPrefs.GetInt(Utility.PlayerPrefKey.UNLOCKED_LEVELS.ToString(),0) < levelIndex)
+        if(PlayerPrefs.GetInt(Constants.UNLOCKED_LEVELS,0) < levelIndex)
         {
-            PlayerPrefs.SetInt(Utility.PlayerPrefKey.UNLOCKED_LEVELS.ToString(), levelIndex);
+            PlayerPrefs.SetInt(Constants.UNLOCKED_LEVELS, levelIndex);
         }
         currentLevelIndex = levelIndex;
         CurrentLevel = instance.levels[currentLevelIndex];

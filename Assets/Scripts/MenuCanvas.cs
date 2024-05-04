@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,7 +8,7 @@ public class MenuCanvas : MonoBehaviour
     [SerializeField]
     private AudioSource menuLabel;
     [SerializeField]
-    private AudioSource firstSelectedInput;
+    private Transform inputsParent;
 
 
     private void OnEnable()
@@ -18,7 +19,6 @@ public class MenuCanvas : MonoBehaviour
     private void OnDisable()
     {
         menuLabel.Stop();
-        firstSelectedInput.Stop();
         StopAllCoroutines();
     }
 
@@ -30,7 +30,7 @@ public class MenuCanvas : MonoBehaviour
         }
         menuLabel.Play();
         yield return new WaitForSeconds(menuLabel.clip.length+.6f);
-        EventSystem.current.SetSelectedGameObject(firstSelectedInput.gameObject);
+        EventSystem.current.SetSelectedGameObject(inputsParent.GetComponentsInChildren<AudioSource>(false).First().gameObject);
     }
 
 }

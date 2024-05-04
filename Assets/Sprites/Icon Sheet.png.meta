@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icon Rat
+      name: Icon Van
       rect:
         serializedVersion: 2
         x: 0
@@ -150,7 +150,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Icon Cat: -267939383
-      Icon Rat: 1309645470
+      Icon Van: 1309645470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

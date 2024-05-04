@@ -10,6 +10,13 @@ public class CatCarrier : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
+
+    [SerializeField]
+    private string catTag;
+    [SerializeField]
+    private string destinationTag;
+
+
     private Cat heldCat = null;
     private int deliveredCats = 0;
 
@@ -29,7 +36,7 @@ public class CatCarrier : MonoBehaviour
         deliveredCats = 0;
     }
 
-    void AttachCat(Cat cat)
+    void PickUpCat(Cat cat)
     {
         heldCat = cat;
         cat.transform.position = transform.position;
@@ -37,7 +44,7 @@ public class CatCarrier : MonoBehaviour
         audioSource.PlayOneShot(catPickUpSoundSFX.GetRandomClip());
     }
 
-    void DeliverHeldCats()
+    void DeliverHeldCat()
     {
         if (heldCat == null) return;
 
@@ -55,16 +62,13 @@ public class CatCarrier : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (other.tag)
+        if (other.tag.Equals(destinationTag))
         {
-            case "Nest":
-                DeliverHeldCats();
-                break;
-            case "Cat":
-                AttachCat(other.GetComponent<Cat>());
-                break;
-            default:
-                break;
+            DeliverHeldCat();
+        }
+        else if (other.tag.Equals(catTag))
+        {
+            PickUpCat(other.GetComponent<Cat>());
         }
     }
 }

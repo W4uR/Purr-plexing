@@ -39,9 +39,26 @@ MonoBehaviour:
     m_Key: ui.settings.button
     m_Metadata:
       m_Items: []
+  - m_Id: 2923360602820608
+    m_Key: audiogroups.whistle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047061222592512
+    m_Key: ui.settings_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3258071598501888
+    m_Key: ui.back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3262940719878144
+    m_Key: ui.test
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5475537153747583036
+    - rid: 5475537197107249211
   m_KeyGenerator:
     rid: 2799286810266566742
   references:
@@ -79,5 +96,22 @@ MonoBehaviour:
           m_TableCodes:
           - hu
           - en
+        - m_KeyId: 3047061222592512
+          m_TableCodes:
+          - hu
+          - en
+        - m_KeyId: 3262940719878144
+          m_TableCodes:
+          - en
+          - hu
         m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+    - rid: 5475537197107249211
+      type: {class: AssetTypeMetadata, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries:
+        - m_KeyId: 2923360602820608
+          m_TableCodes:
+          - en
+        m_TypeString: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null

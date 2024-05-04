@@ -39,6 +39,34 @@ MonoBehaviour:
     m_Key: ui.settings.button
     m_Metadata:
       m_Items: []
+  - m_Id: 3046267693830144
+    m_Key: ui.master.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3047313505783808
+    m_Key: ui.settings_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246410514829312
+    m_Key: ui.voice.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246720943656960
+    m_Key: ui.breeze.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3246989584633856
+    m_Key: ui.cat.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3247221777108992
+    m_Key: ui.bird.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3257976467492864
+    m_Key: ui.back
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
