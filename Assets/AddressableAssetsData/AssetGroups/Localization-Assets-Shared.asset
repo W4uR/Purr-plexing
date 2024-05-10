@@ -41,6 +41,23 @@ MonoBehaviour:
     - Locale-en
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0b24f6529f2f106468a8e26906a452e2
+    m_Address: Assets/Localization/Tables/Tutorial/Text/Tutorial Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: faeb57600eab21945bbe07222ede6829
+    m_Address: Assets/Localization/Tables/Tutorial/Audio/Tutorial Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ffc6d407462a61478ff732c7f0d65bd
+    m_Address: Assets/Audio/UI & Navigation/hu/Settings/hu_ui.step.slider.wav
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

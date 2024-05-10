@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2222359776333824
-    m_Localized: Settings
+    m_Localized: Volume settings
     m_Metadata:
       m_Items: []
   - m_Id: 3046267693830144
@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3047313505783808
-    m_Localized: Settings menu
+    m_Localized: Volume settings menu
     m_Metadata:
       m_Items: []
   - m_Id: 3246410514829312
@@ -63,11 +63,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3247221777108992
-    m_Localized: Bird volume
+    m_Localized: Engine volume
     m_Metadata:
       m_Items: []
   - m_Id: 3257976467492864
     m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5428302387351552
+    m_Localized: Step volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5431354439766016
+    m_Localized: Ambiance volume
     m_Metadata:
       m_Items: []
   references:

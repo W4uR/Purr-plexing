@@ -29,14 +29,56 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b38e117d65e12994cb6ee9e65f4910cd
-    m_Address: hu_ui.settings.button
+  - m_GUID: e6d31563d8e461c419b12f3cb7ea7968
+    m_Address: hu_ui.volume_settings.label
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8aef7dedf21638e46b85dd31007f3370
     m_Address: hu_test
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5397b205ca9c1ac498eec514b060335c
+    m_Address: hu_ui.ambiance.slider
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3faae41aa42c12a4bb51f65a9dfba777
+    m_Address: hu_ui.engine.slider
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 043ba5d202cb6d142ad5ae030337ed28
+    m_Address: hu_ui.cat.slider
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71b90ea481a75e34ab7ec4b7f017d724
+    m_Address: hu_ui.breeze.slider
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 125f0fec9430df348a2b1c70ec7bd9e1
+    m_Address: hu_ui.voice.slider
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 081f02f1eb88d7f43b2282e14f75d04c
+    m_Address: hu_ui.volume_settings.button
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f2d0ade88a525774ebb2d1f63b3c70ae
+    m_Address: hu_ui.back
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-hu

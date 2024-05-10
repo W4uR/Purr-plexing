@@ -15,7 +15,9 @@ public static class Constants
     public const string VOICE_VOL = "VoiceVolume";
     public const string BREEZE_VOL = "BreezeVolume";
     public const string CAT_VOL = "CatVolume";
-    public const string BIRD_VOL = "BirdVolume";
+    public const string ENGINE_VOL = "EngineVolume";
+    public const string AMBIANCE_VOL = "AmbianceVolume";
+    public const string STEP_VOL = "StepVolume";
 }
 
 public static class Extensions

@@ -10,13 +10,11 @@ public class Narrator : MonoBehaviour
     private TMP_Text subtitleArea;
     [SerializeField]
     private AudioSource speaker;
-    [SerializeField]
-
 
     private static Narrator s_instance;
 
 
-    const string TABLE_NAME = "LocalizationTable";
+    const string TABLE_NAME = "SpeechTable";
 
     void Awake()
     { 

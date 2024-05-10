@@ -24,6 +24,12 @@ MonoBehaviour:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 050b2aa4f6abdc64a9427a6b5317f434
+    m_Address: SpeechTable_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2222359776333824
-    m_Key: ui.settings.button
+    m_Key: ui.volume_settings.button
     m_Metadata:
       m_Items: []
   - m_Id: 3046267693830144
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3047313505783808
-    m_Key: ui.settings_menu
+    m_Key: ui.volume_settings.label
     m_Metadata:
       m_Items: []
   - m_Id: 3246410514829312
@@ -60,11 +60,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3247221777108992
-    m_Key: ui.bird.slider
+    m_Key: ui.engine.slider
     m_Metadata:
       m_Items: []
   - m_Id: 3257976467492864
     m_Key: ui.back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5428302387351552
+    m_Key: ui.step.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5431354439766016
+    m_Key: ui.ambiance.slider
     m_Metadata:
       m_Items: []
   m_Metadata:

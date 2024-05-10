@@ -21,13 +21,19 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField]
     private Slider catSlider;
     [SerializeField]
-    private Slider birdSlider;
+    private Slider engineSlider;
+    [SerializeField]
+    private Slider stepSlider;
+    [SerializeField]
+    private Slider ambianceSlider;
+
 
     private void Start()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         AddListeners();
         LoadPlayerPrefs();
+        gameObject.SetActive(false);
     }
 
     private void AddListeners()
@@ -36,7 +42,9 @@ public class SettingsMenu : MonoBehaviour
         voiceSlider.onValueChanged.AddListener(delegate { OnValueChange(voiceSlider, Constants.VOICE_VOL); });
         breezeSlider.onValueChanged.AddListener(delegate { OnValueChange(breezeSlider, Constants.BREEZE_VOL); });
         catSlider.onValueChanged.AddListener(delegate { OnValueChange(catSlider, Constants.CAT_VOL); });
-        birdSlider.onValueChanged.AddListener(delegate { OnValueChange(birdSlider, Constants.BIRD_VOL); });
+        engineSlider.onValueChanged.AddListener(delegate { OnValueChange(engineSlider, Constants.ENGINE_VOL); });
+        stepSlider.onValueChanged.AddListener(delegate { OnValueChange(stepSlider, Constants.STEP_VOL); });
+        ambianceSlider.onValueChanged.AddListener(delegate { OnValueChange(ambianceSlider, Constants.AMBIANCE_VOL); });
     }
 
     private void OnValueChange(Slider slider, string mixerParam)
@@ -47,7 +55,7 @@ public class SettingsMenu : MonoBehaviour
         }
         else
         {
-            mixer.SetFloat(mixerParam, Mathf.Lerp(-20, 5f, slider.value / slider.maxValue));
+            mixer.SetFloat(mixerParam, Mathf.Lerp(-40f, 3f, slider.value / slider.maxValue));
         }
         PlayerPrefs.SetFloat(mixerParam, slider.value);
     }
@@ -58,7 +66,9 @@ public class SettingsMenu : MonoBehaviour
         voiceSlider.value = PlayerPrefs.GetFloat(Constants.VOICE_VOL, 8);
         breezeSlider.value = PlayerPrefs.GetFloat(Constants.BREEZE_VOL, 8);
         catSlider.value = PlayerPrefs.GetFloat(Constants.CAT_VOL, 8);
-        birdSlider.value = PlayerPrefs.GetFloat(Constants.BIRD_VOL, 8);
+        engineSlider.value = PlayerPrefs.GetFloat(Constants.ENGINE_VOL, 8);
+        stepSlider.value = PlayerPrefs.GetFloat(Constants.CAT_VOL, 8);
+        ambianceSlider.value = PlayerPrefs.GetFloat(Constants.ENGINE_VOL, 8);
     }
 
 

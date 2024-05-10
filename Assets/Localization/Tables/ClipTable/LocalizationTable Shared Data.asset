@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2222365849686016
-    m_Key: ui.settings.button
+    m_Key: ui.volume_settings.button
     m_Metadata:
       m_Items: []
   - m_Id: 2923360602820608
@@ -44,7 +44,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3047061222592512
-    m_Key: ui.settings_menu
+    m_Key: ui.volume_settings.label
     m_Metadata:
       m_Items: []
   - m_Id: 3258071598501888
@@ -53,6 +53,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3262940719878144
     m_Key: ui.test
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5429506530086912
+    m_Key: ui.step.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5431421582184448
+    m_Key: ui.ambiance.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5432248359194624
+    m_Key: ui.engine.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5432827785515008
+    m_Key: ui.cat.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5433355995189248
+    m_Key: ui.breeze.slider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5433922834403328
+    m_Key: ui.voice.slider
     m_Metadata:
       m_Items: []
   m_Metadata:
@@ -101,6 +125,34 @@ MonoBehaviour:
           - hu
           - en
         - m_KeyId: 3262940719878144
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 5429506530086912
+          m_TableCodes:
+          - hu
+          - en
+        - m_KeyId: 5431421582184448
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 5432248359194624
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 5432827785515008
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 5433355995189248
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 5433922834403328
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 3258071598501888
           m_TableCodes:
           - en
           - hu
