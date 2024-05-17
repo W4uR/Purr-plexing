@@ -79,6 +79,10 @@ MonoBehaviour:
     m_Key: ui.pause.label
     m_Metadata:
       m_Items: []
+  - m_Id: 7990743361130496
+    m_Key: ui.back_to_main_button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

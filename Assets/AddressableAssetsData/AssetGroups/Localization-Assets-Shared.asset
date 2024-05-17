@@ -58,6 +58,13 @@ MonoBehaviour:
     - Locale-en
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77d6527746f76be45945b5edd92307b5
+    m_Address: Assets/Audio/UI & Navigation/hu/Buttons/hu_menu.button.back_to_main_menu.wav
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

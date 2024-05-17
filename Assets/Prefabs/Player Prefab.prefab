@@ -401,13 +401,12 @@ GameObject:
   - component: {fileID: 7747780885261800760}
   - component: {fileID: 5904835701862997701}
   - component: {fileID: 4069030150202990550}
-  - component: {fileID: 3439944065864044040}
   - component: {fileID: 8184690897073895582}
   - component: {fileID: 4039629663201590161}
   m_Layer: 0
   m_Name: Player Prefab
   m_TagString: Player
-  m_Icon: {fileID: 2800000, guid: 729c547351b862045b91781ae2c0f62d, type: 3}
+  m_Icon: {fileID: 2800000, guid: 31315036a1a6c864bb719bf6c65faed6, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -648,88 +647,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3439944065864044040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6836474202132572109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 980f77c46555e2f45b6aabd1c8bbb726, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5904835701862997701}
-        m_TargetAssemblyTypeName: Mover, Assembly-CSharp
-        m_MethodName: OnMoveForward
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: aff4fdae-82c4-4e44-b2a0-fcfab49b9319
-    m_ActionName: 'Player/Move Forward[/Keyboard/w,/Keyboard/upArrow,/Mouse/scroll/up]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5904835701862997701}
-        m_TargetAssemblyTypeName: Mover, Assembly-CSharp
-        m_MethodName: OnTurn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 38abff9c-7d7a-41f3-a619-166a46d2288e
-    m_ActionName: 'Player/Turning[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow,/Mouse/leftButton,/Mouse/rightButton]'
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2916779537752450966}
-        m_TargetAssemblyTypeName: CatCaller, Assembly-CSharp
-        m_MethodName: OnWhistle
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 8676d396-25c7-4fef-9a7d-d5d331a33f2c
-    m_ActionName: 'Player/Cat Call[/Keyboard/space,/Mouse/scroll/down]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b482dab8-10f6-4d8e-8366-33f258186d69
-    m_ActionName: 'UI/TogglePauseMenu[/Keyboard/escape]'
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!54 &8184690897073895582
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -852,7 +769,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

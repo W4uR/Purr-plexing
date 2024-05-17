@@ -83,6 +83,10 @@ MonoBehaviour:
     m_Key: ui.pause.label
     m_Metadata:
       m_Items: []
+  - m_Id: 7990776684875776
+    m_Key: ui.back_to_main_button
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5475537153747583036
@@ -164,6 +168,10 @@ MonoBehaviour:
           m_TableCodes:
           - en
           - hu
+        - m_KeyId: 7990776684875776
+          m_TableCodes:
+          - hu
+          - en
         m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 5475537197107249211

@@ -9,6 +9,8 @@ public class GamePauser : MonoBehaviour
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject settingsMenu;
+    [SerializeField]
+    List<MonoBehaviour> componentsToDisable;
 
     private static bool isPaused;
     public static bool IsPaused
@@ -24,23 +26,16 @@ public class GamePauser : MonoBehaviour
 
     public static event Action<bool> PausedChanged;
 
-    private static GamePauser s_instance;
-    private void Awake()
-    {
-        if (s_instance = null)
-            s_instance = this;
-    }
-
     public void OnTogglePauseMenu()
     {
         Debug.Log("Pause button pressed.");
         IsPaused = !IsPaused;
         pauseMenu.SetActive(IsPaused);
         settingsMenu.SetActive(false);
+        foreach (var component in componentsToDisable)
+        {
+            component.enabled = !IsPaused;
+        }
     }
 
-    public static void TogglePause()
-    {
-        s_instance.OnTogglePauseMenu();
-    }
 }

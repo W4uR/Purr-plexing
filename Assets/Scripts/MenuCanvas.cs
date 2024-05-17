@@ -29,7 +29,7 @@ public class MenuCanvas : MonoBehaviour
             yield return null;
         }
         menuLabel.Play();
-        yield return new WaitForSeconds(menuLabel.clip.length+.6f);
+        yield return new WaitForSeconds(menuLabel.clip.length+.1f);
         EventSystem.current.SetSelectedGameObject(inputsParent.GetComponentsInChildren<AudioSource>(false).First().gameObject);
     }
 

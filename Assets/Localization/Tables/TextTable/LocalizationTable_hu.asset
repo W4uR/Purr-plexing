@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2220931800371200
-    m_Localized: "J\xE1t\xE9k folytat\xE1sa"
+    m_Localized: "Folytat\xE1s"
     m_Metadata:
       m_Items: []
   - m_Id: 2221491119198208
@@ -80,6 +80,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7656708172681216
     m_Localized: "Sz\xFCnet"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7990743361130496
+    m_Localized: "Vissza a f\u0151men\xFCbe"
     m_Metadata:
       m_Items: []
   references:
