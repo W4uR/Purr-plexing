@@ -137,7 +137,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.2
+  bundleVersion: 0.3
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -159,7 +159,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   androidMinAspectRatio: 1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Standalone: com.Kis-Abel-Q4AZ1R.Purr-plexing
   buildNumber:
     Bratwurst: 0
     Standalone: 0
@@ -659,7 +660,8 @@ PlayerSettings:
   webGLWebAssemblyTable: 0
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: -lang;en
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

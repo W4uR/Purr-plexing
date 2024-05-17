@@ -79,6 +79,10 @@ MonoBehaviour:
     m_Key: ui.voice.slider
     m_Metadata:
       m_Items: []
+  - m_Id: 7657288731463680
+    m_Key: ui.pause.label
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items:
     - rid: 5475537153747583036
@@ -153,6 +157,10 @@ MonoBehaviour:
           - en
           - hu
         - m_KeyId: 3258071598501888
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 7657288731463680
           m_TableCodes:
           - en
           - hu

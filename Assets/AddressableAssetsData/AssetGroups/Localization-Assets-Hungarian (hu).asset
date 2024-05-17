@@ -83,6 +83,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d445c753c1096747ad20bb42427a48f
+    m_Address: hu_ui.pause.label
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

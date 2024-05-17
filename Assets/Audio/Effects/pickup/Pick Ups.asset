@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26fd33a20d0dfc148a98dcff25d448b3, type: 3}
-  m_Name: Cat Picked Up
+  m_Name: Pick Ups
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: d10dbe33b6418834391c4ad452c97a61, type: 3}
+  - {fileID: 8300000, guid: 4e5921fd81fa156409988adc461cde15, type: 3}
+  - {fileID: 8300000, guid: 427b812ea44e57f4a965107d104482e3, type: 3}

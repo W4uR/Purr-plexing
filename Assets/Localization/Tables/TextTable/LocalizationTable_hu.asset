@@ -78,6 +78,10 @@ MonoBehaviour:
     m_Localized: "K\xF6rnyezet hanger\u0151"
     m_Metadata:
       m_Items: []
+  - m_Id: 7656708172681216
+    m_Localized: "Sz\xFCnet"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

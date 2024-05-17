@@ -1355,7 +1355,7 @@ GameObject:
   - component: {fileID: 7800210559332492016}
   - component: {fileID: 2827140367282999757}
   m_Layer: 5
-  m_Name: Settings Canvas
+  m_Name: Volume Settings Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

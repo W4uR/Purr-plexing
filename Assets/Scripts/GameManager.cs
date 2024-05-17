@@ -7,26 +7,6 @@ using System;
 public class GameManager : Singleton<GameManager>
 {
 
-    #region Pause
-    private static bool isPaused;
-    public static bool IsPaused {
-        get { return isPaused; }
-        set
-        {
-            isPaused = value;
-            if(PausedChanged != null)
-                PausedChanged.Invoke(value);
-        }
-    }
-
-    public static event Action<bool> PausedChanged;
-
-    public void OnTogglePauseMenu()
-    {
-        IsPaused = !IsPaused;
-    }
-    #endregion
-
     private int levelToLoad;
     public int LevelToLoad => levelToLoad;
 

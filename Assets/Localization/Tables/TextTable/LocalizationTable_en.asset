@@ -78,6 +78,10 @@ MonoBehaviour:
     m_Localized: Ambiance volume
     m_Metadata:
       m_Items: []
+  - m_Id: 7656708172681216
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
