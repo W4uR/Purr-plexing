@@ -71,7 +71,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5428302387351552
-    m_Localized: "L\xE9p\xE9s hanger\u0151"
+    m_Localized: "Effekt hanger\u0151"
     m_Metadata:
       m_Items: []
   - m_Id: 5431354439766016
@@ -84,6 +84,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7990743361130496
     m_Localized: "Vissza a f\u0151men\xFCbe"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8066962463133696
+    m_Localized: "P\xE1lyav\xE1laszt\xE1s men\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8073566537388032
+    m_Localized: "Bevezet\u0151 p\xE1lya"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8077272519544832
+    m_Localized: "P\xE1lya 1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8079716464988160
+    m_Localized: "P\xE1lya 2"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9046907951779840
+    m_Localized: "P\xE1lya 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047179163865088
+    m_Localized: "P\xE1lya 4"
     m_Metadata:
       m_Items: []
   references:

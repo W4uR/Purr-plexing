@@ -11,23 +11,27 @@ public class PlayerMotor : MonoBehaviour
     public float _turnDuration;
     [SerializeField]
     private LayerMask _wallLayermask;
+
+    [SerializeField]
+    private AudioClip bumpSfx;
     [SerializeField]
     private AudioSource _feetAudioSource;
 
-    private bool _isMoving = false;
+    private bool isMoving = false;
 
 
     public void OnMoveForward(InputAction.CallbackContext context)
     {
         if (!context.ReadValueAsButton()) return;
-        if (_isMoving) return;
+        if (isMoving || GamePauser.IsPaused) return;
 
         Vector3 endPosition = transform.position + transform.forward;
-        Debug.Log("Endpos: " + endPosition.z);
-        Debug.Log("position: " + transform.position);
-        Debug.Log("forward: " + transform.forward);
 
-        if (LevelManager.CurrentLevel.GetCell(endPosition) == null) return;
+        if (LevelManager.CurrentLevel.GetCell(endPosition) == null)
+        {
+            _feetAudioSource.PlayOneShot(bumpSfx);
+            return;
+        }
 
         StartCoroutine(MoveOverTime(endPosition));
         StartCoroutine(PlayStepsMoving(LevelManager.CurrentLevel.GetCell(transform.position), LevelManager.CurrentLevel.GetCell(endPosition)));
@@ -36,7 +40,7 @@ public class PlayerMotor : MonoBehaviour
     public void OnTurn(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
-        if (_isMoving) return;
+        if (isMoving || GamePauser.IsPaused) return;
 
         RelativeDirection direction = context.ReadValue<float>() < 0f ? RelativeDirection.LEFT : RelativeDirection.RIGHT;
         Quaternion endRotation = Quaternion.Euler(0f, direction.toRotationAngle(), 0f) * transform.rotation;
@@ -47,7 +51,7 @@ public class PlayerMotor : MonoBehaviour
 
     private IEnumerator MoveOverTime(Vector3 endPosition)
     {
-        _isMoving = true;
+        isMoving = true;
         Vector3 startPosition = transform.position;
         float elapsedTime = 0f;
         while (elapsedTime < _stepDuration)
@@ -59,12 +63,12 @@ public class PlayerMotor : MonoBehaviour
         //Enélkül a koordináta nagyon közeli lehet egy egész számhoz, de nem egész (0-nál jött elõ a Z koordináta esetében) És emiatt nem lehetett hallani a macskát
         // A mozgást lehet újra kéne gondolni és a végpoziciót, nem így meghatározni
         transform.position = endPosition.RoundXZ(); 
-        _isMoving = false;
+        isMoving = false;
     }
 
     private IEnumerator TurnOverTime(Quaternion endRotation)
     {
-        _isMoving = true;
+        isMoving = true;
         float elapsedTime = 0f;
         Quaternion startRotation = transform.rotation;
         while (elapsedTime < _turnDuration)
@@ -74,7 +78,7 @@ public class PlayerMotor : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         transform.rotation = endRotation;
-        _isMoving = false;
+        isMoving = false;
     }
 
     private IEnumerator PlayStepsMoving(Cell startingCell, Cell targetCell)

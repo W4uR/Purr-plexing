@@ -23,7 +23,7 @@ public class CatWhistler : MonoBehaviour
 
     public void OnWhistle(InputAction.CallbackContext context)
     {
-        if (!canWhistle) return;
+        if (!canWhistle || GamePauser.IsPaused) return;
         StartCoroutine(nameof(Whistle));
     }
 

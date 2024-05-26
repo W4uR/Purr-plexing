@@ -89,6 +89,54 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 132997f509ccbd149b56ef62022921a7
+    m_Address: hu_menu.label.level_selection
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e1e3197604155241947ab1f8828ef46
+    m_Address: hu_ui.level_0
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 855862ac52efb524ba6559102cc10f8b
+    m_Address: hu_ui.level_1
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df6f06b5538d1054d8e512b439a751bd
+    m_Address: hu_ui.level_2
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdd0d01039cba3c4f996dc5317e05e42
+    m_Address: hu_ui.main_menu
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 357c9b2769f0aaa458ad3e0265394a7d
+    m_Address: hu_ui.level_3
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6debf1a62b119a418b59809c579a732
+    m_Address: hu_ui.level_4
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c9b7376de9f3ad41a8ce98b06616c83
+    m_Address: hu_ui.effect_vol
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

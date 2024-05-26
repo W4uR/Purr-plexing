@@ -19,7 +19,7 @@ public class BreezeAudioPlayer : MonoBehaviour
     private void HandleBreezeAudio()
     {
         leftBreezeSource.volume = volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.LEFT)); ;
-        leftBreezeSource.pitch = leftBreezeSource.volume;
+      //  leftBreezeSource.pitch = leftBreezeSource.volume;
         if (leftBreezeSource.volume != 0f)
         {
             if (!leftBreezeSource.isPlaying)
@@ -31,7 +31,7 @@ public class BreezeAudioPlayer : MonoBehaviour
         }
 
         rightBreezeSource.volume = volumeFunction.Evaluate(WallDistanceToDirection(RelativeDirection.RIGHT));
-        rightBreezeSource.pitch = rightBreezeSource.volume;
+      //  rightBreezeSource.pitch = rightBreezeSource.volume;
         if (rightBreezeSource.volume != 0f)
         {
             if (!rightBreezeSource.isPlaying)

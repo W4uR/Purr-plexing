@@ -34,13 +34,6 @@ MonoBehaviour:
     - Locale-en
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f1a5db5d757083344b044d6cb33aa892
-    m_Address: Assets/Audio/UI & Navigation/hu/hu_menu.button.continue.wav
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    - Locale-hu
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0b24f6529f2f106468a8e26906a452e2
     m_Address: Assets/Localization/Tables/Tutorial/Text/Tutorial Shared Data.asset
     m_ReadOnly: 1
@@ -51,15 +44,15 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9ffc6d407462a61478ff732c7f0d65bd
-    m_Address: Assets/Audio/UI & Navigation/hu/Settings/hu_ui.step.slider.wav
+  - m_GUID: 77d6527746f76be45945b5edd92307b5
+    m_Address: Assets/Audio/UI & Navigation/hu/Buttons/hu_menu.button.back_to_main_menu.wav
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 77d6527746f76be45945b5edd92307b5
-    m_Address: Assets/Audio/UI & Navigation/hu/Buttons/hu_menu.button.back_to_main_menu.wav
+  - m_GUID: f1a5db5d757083344b044d6cb33aa892
+    m_Address: Assets/Audio/UI & Navigation/hu/hu_menu.button.continue.wav
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
@@ -27,7 +25,9 @@ public class SliderNarrator : MonoBehaviour, ISelectHandler, IDeselectHandler
         mySlider.onValueChanged.AddListener(delegate {
             audioSource.Stop();
             StopAllCoroutines(); 
-            StartCoroutine(PlayTaste()); });
+            if(audioSource.isActiveAndEnabled)
+                StartCoroutine(PlayTaste()); 
+        });
     }
 
     public void OnSelect(BaseEventData eventData)

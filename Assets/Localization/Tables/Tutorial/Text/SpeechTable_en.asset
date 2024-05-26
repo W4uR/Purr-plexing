@@ -18,8 +18,53 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 1095427487698944
-    m_Localized: intro1_en
+  - m_Id: 7171871699636224
+    m_Localized: Your job is to catch stray animals, such as cats, roaming the city's
+      alleys.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233781476364288
+    m_Localized: Lately, there have been more and more cats on the streets for some
+      reason.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233927962431488
+    m_Localized: Catch and bring them to the van.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234314517876736
+    m_Localized: Use the space bar or south button to whistle for cats.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235357892939776
+    m_Localized: Use the cursor keys or D-pad to move forward and turn in place.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235552366039040
+    m_Localized: You just bumped into a wall. Try turning in a different direction
+      and moving again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454285650989056
+    m_Localized: The alleys are pretty narrow and maze-like. When there's an opening
+      to your side, you can hear a breeze.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454404597256192
+    m_Localized: You caught a cat. Now bring it back to the truck you passed earlier.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454502068686848
+    m_Localized: You completed this job, but there's more to come, each one more
+      difficult than the last.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7463340775837696
+    m_Localized: You knocked something over and scared a nearby cat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7463548872036352
+    m_Localized: When a cat gets scared, it flees from its previous spot.
     m_Metadata:
       m_Items: []
   references:

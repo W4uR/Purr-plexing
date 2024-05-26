@@ -30,7 +30,8 @@ public class MenuCanvas : MonoBehaviour
         }
         menuLabel.Play();
         yield return new WaitForSeconds(menuLabel.clip.length+.1f);
-        EventSystem.current.SetSelectedGameObject(inputsParent.GetComponentsInChildren<AudioSource>(false).First().gameObject);
+        if(!inputsParent.GetComponentsInChildren<Transform>().Select(x=>x.gameObject).ToList().Contains(EventSystem.current.currentSelectedGameObject))
+            EventSystem.current.SetSelectedGameObject(inputsParent.GetComponentsInChildren<AudioSource>(false).First().gameObject);
     }
 
 }

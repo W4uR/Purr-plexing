@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     private static LevelManager instance;
     private static int currentLevelIndex = 0;
     public static Level CurrentLevel { get; private set; }
-    public static event Action OnLevelLoaded;
+    public static event Action<int> OnLevelLoaded;
 
     public static Transform GetLevelParent() => instance.levelParent;
 
@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour
 
     public static void LoadLevel(int levelIndex)
     {
+        Debug.Log($"LevelManager::LoadLevel({levelIndex})");
         if(PlayerPrefs.GetInt(Constants.UNLOCKED_LEVELS,0) < levelIndex)
         {
             PlayerPrefs.SetInt(Constants.UNLOCKED_LEVELS, levelIndex);
@@ -48,6 +49,6 @@ public class LevelManager : MonoBehaviour
         currentLevelIndex = levelIndex;
         CurrentLevel = instance.levels[currentLevelIndex];
         CurrentLevel.Initialize(instance.levelParent);
-        OnLevelLoaded.Invoke();
+        OnLevelLoaded.Invoke(levelIndex);
     }
 }

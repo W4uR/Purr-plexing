@@ -71,7 +71,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5428302387351552
-    m_Localized: Step volume
+    m_Localized: Effect volume
     m_Metadata:
       m_Items: []
   - m_Id: 5431354439766016
@@ -84,6 +84,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7990743361130496
     m_Localized: Back to main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8066962463133696
+    m_Localized: Level selection menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8073566537388032
+    m_Localized: Tutorial level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8077272519544832
+    m_Localized: Level 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8079716464988160
+    m_Localized: Level 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9046907951779840
+    m_Localized: Level 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047179163865088
+    m_Localized: Level 4
     m_Metadata:
       m_Items: []
   references:

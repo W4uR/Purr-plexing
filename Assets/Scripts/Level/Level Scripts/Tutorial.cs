@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Tutorial : MonoBehaviour
 {
@@ -13,59 +14,94 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(Introduction());
     }
 
-    
+
+    private Bindings bindings;
+
+    private void Awake()
+    {
+        bindings = new Bindings();
+    }
+
+    private void OnEnable()
+    {
+        bindings.Player.MoveForward.performed += CheckWallBump;
+        bindings.Player.MoveForward.Enable();
+    }
+
+    private void OnDisable()
+    {
+        bindings.Player.MoveForward.performed -= CheckWallBump;
+        bindings.Player.MoveForward.Disable();
+    }
+
+    Coroutine wallDialog = null;
+    bool moveTutorial = false;
+    void CheckWallBump(InputAction.CallbackContext context)
+    {
+        Debug.Log(context);
+        if (context.ReadValue<float>() > .5f)
+        {
+            Debug.Log("Check wall bump");
+            Vector3 endPosition = _player.position + _player.forward;
+            if (LevelManager.CurrentLevel.GetCell(endPosition) == null && wallDialog == null && moveTutorial == true)
+                 wallDialog = StartCoroutine(Narrator.PlayAudioClip("tutorial.6"));
+        }
+    }
+
     IEnumerator Introduction()
     {
         // Welcome player
-        for (int i = 1; i <= 5; i++)
+        for (int i = 1; i <= 3; i++)
         {
-            yield return Narrator.PlayAudioClip("tutorial.intro." + i);
+            yield return Narrator.PlayAudioClip("tutorial." + i);
+            yield return new WaitForSeconds(1.4f);
         }
 
         // Introduce cats and cat calling
-        yield return Narrator.PlayAudioClip("tutorial.controls.calling.1");
+        yield return Narrator.PlayAudioClip("tutorial.4");
+
+
         while (!Input.GetKeyDown(KeyCode.Space))
         {
             yield return null;
         }
-        yield return Task.Delay(TimeSpan.FromSeconds(2));
-        yield return Narrator.PlayAudioClip("tutorial.cat.response");
+        yield return new WaitForSeconds(3f);
 
         // Explain movement
-        yield return Narrator.PlayAudioClip("tutorial.controls.movement.forward");
-        while (!Input.GetKeyDown(KeyCode.W))
+        yield return Narrator.PlayAudioClip("tutorial.5");
+        var currentPos = _player.position;
+        var currentRot = _player.rotation;
+        while (currentPos == _player.position && currentRot == _player.rotation)
         {
             yield return null;
         }
+        moveTutorial = true;
 
-        // Explain footstep sounds ("Different floors can have different sounds use this infromation to better anvigate through the level")
-        yield return Narrator.PlayAudioClip("tutorial.cues.steps");
-        
         // Wait for breeze in right ear
         while(Physics.Raycast(_player.position,_player.right,1f))
         {
             yield return null;
         }
-        // Introduce breeze sfx
-        yield return Narrator.PlayAudioClip("tutorial.cues.breeze");
-        // Introduce turning
-        yield return Narrator.PlayAudioClip("tutorial.controls.movement.turning");
-        while (!Input.GetKeyDown(KeyCode.D))
-        {
-            yield return null;
-        }
-        yield return Narrator.PlayAudioClip("tutorial.cues.breeze.volume");
 
-        // Try calling for the cat again (now its much louder and can be heard coming from front of the player)
-        yield return Narrator.PlayAudioClip("tutorial.controls.calling.2");
-        while (!Input.GetKeyDown(KeyCode.Space))
+        // Introduce breeze sfx
+        yield return Narrator.PlayAudioClip("tutorial.7");
+
+
+        // Wait forcapturing a cat then play tutorial.8
+        while(_player.GetComponentInChildren<Cat>() == null)
         {
             yield return null;
         }
-        yield return Narrator.PlayAudioClip("tutorial.cues.occlusion");
-        
-        
+        yield return new WaitForSeconds(0.7f);
+        yield return Narrator.PlayAudioClip("tutorial.8");
 
     }
-    
+
+    public static IEnumerator LevelFinished()
+    {
+        yield return Narrator.PlayAudioClip("tutorial.9");
+        yield return new WaitForSeconds(0.2f);
+        Narrator.Clear();
+    }
+
 }

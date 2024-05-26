@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -21,17 +22,60 @@ public class Narrator : MonoBehaviour
         s_instance = this;
     }
 
+    private void OnEnable()
+    {
+        GamePauser.PausedChanged += OnPauseChanged;
+    }
+
+    private void OnDisable()
+    {
+        GamePauser.PausedChanged -= OnPauseChanged;
+
+    }
+
     public static IEnumerator PlayAudioClip(string key)
     {
+
         AudioClip clip = LocalizationSettings.AssetDatabase.GetLocalizedAsset<AudioClip>(TABLE_NAME, key);
         if(clip == null)
         {
             Debug.LogError("No key in table");
             yield break;
         }
-        s_instance.speaker.PlayOneShot(clip);
+        while (GamePauser.IsPaused)
+        {
+            Debug.Log("The Game is Paused");
+            yield return null;
+        }
+        s_instance.speaker.clip = clip;
+        var timeleft = clip.length;
+
+
+        s_instance.speaker.Play();
         s_instance.subtitleArea.text = LocalizationSettings.StringDatabase.GetLocalizedString(TABLE_NAME, key);
-        yield return new WaitForSeconds(clip.length+1.6f);
+        while(timeleft >= 0f)
+        {
+            timeleft -= Time.deltaTime;
+            while (GamePauser.IsPaused)
+            {
+                Debug.Log("The Game is Paused");
+                yield return null;
+            }
+            yield return new WaitForEndOfFrame();
+        }
+        s_instance.speaker.clip = null;
+    }
+    public static void Clear()
+    {
+        s_instance.subtitleArea.text = "";
+    }
+
+    void OnPauseChanged(bool isPaused)
+    {
+        if(isPaused)
+            speaker.Pause();
+        else
+            speaker.Play();
     }
 
 }

@@ -83,6 +83,30 @@ MonoBehaviour:
     m_Key: ui.back_to_main_button
     m_Metadata:
       m_Items: []
+  - m_Id: 8066962463133696
+    m_Key: ui.level_selection.label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8073566537388032
+    m_Key: ui.level_0
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8077272519544832
+    m_Key: ui.level_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8079716464988160
+    m_Key: ui.level_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9046907951779840
+    m_Key: ui.level_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047179163865088
+    m_Key: ui.level_4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

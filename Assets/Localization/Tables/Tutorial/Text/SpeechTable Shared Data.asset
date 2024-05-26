@@ -15,8 +15,48 @@ MonoBehaviour:
   m_TableCollectionName: SpeechTable
   m_TableCollectionNameGuidString: 0b24f6529f2f106468a8e26906a452e2
   m_Entries:
-  - m_Id: 1095427487698944
-    m_Key: intro.1
+  - m_Id: 7171871699636224
+    m_Key: tutorial.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233781476364288
+    m_Key: tutorial.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233927962431488
+    m_Key: tutorial.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234314517876736
+    m_Key: tutorial.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235357892939776
+    m_Key: tutorial.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235552366039040
+    m_Key: tutorial.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454285650989056
+    m_Key: tutorial.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454404597256192
+    m_Key: tutorial.8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454502068686848
+    m_Key: tutorial.9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7463340775837696
+    m_Key: trap.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7463548872036352
+    m_Key: trap.2
     m_Metadata:
       m_Items: []
   m_Metadata:

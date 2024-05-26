@@ -18,8 +18,56 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 1095427487698944
-    m_Localized: intro1_hu
+  - m_Id: 7171871699636224
+    m_Localized: "A feladatod az, hogy befogd a v\xE1ros sik\xE1toraiban k\xF3borl\xF3
+      \xE1llatokat, p\xE9ld\xE1ul macsk\xE1kat."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233781476364288
+    m_Localized: "Mostan\xE1ban valami\xE9rt egyre t\xF6bb macska van az utc\xE1kon."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7233927962431488
+    m_Localized: "Fogd meg \u0151ket, \xE9s vidd a furgonhoz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7234314517876736
+    m_Localized: "Haszn\xE1ld a sz\xF3k\xF6zt vagy a d\xE9li gombot, hogy f\xFCty\xFClj
+      a macsk\xE1knak."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235357892939776
+    m_Localized: "Haszn\xE1ld a kurzorbillenty\u0171ket vagy a D-padot az el\u0151re
+      mozg\xE1shoz \xE9s a fordul\xE1shoz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7235552366039040
+    m_Localized: "Most nekiment\xE9l egy falnak. Pr\xF3b\xE1lj meg m\xE1s ir\xE1nyba
+      fordulni \xE9s \xFAjra mozogni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454285650989056
+    m_Localized: "A sik\xE1torok el\xE9g sz\u0171kek \xE9s labirintusszer\u0171ek.
+      Amikor van egy ny\xEDl\xE1s az oldaladon, szell\u0151t hallhatsz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454404597256192
+    m_Localized: "Elkapt\xE1l egy macsk\xE1t. Most vidd vissza a teheraut\xF3hoz,
+      ami mellett kor\xE1bban elment\xE9l."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7454502068686848
+    m_Localized: "Teljes\xEDtetted ezt a feladatot, de van m\xE9g t\xF6bb is, mindegyik
+      nehezebb, mint az el\u0151z\u0151."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7463340775837696
+    m_Localized: "Feld\xF6nt\xF6tt\xE9l valamit, \xE9s megijesztett\xE9l egy k\xF6zeli
+      macsk\xE1t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7463548872036352
+    m_Localized: "Amikor egy macska megijed, elmenek\xFCl az el\u0151z\u0151 hely\xE9r\u0151l."
     m_Metadata:
       m_Items: []
   references:

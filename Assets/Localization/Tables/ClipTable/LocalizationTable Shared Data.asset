@@ -16,7 +16,7 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: ec6e802e453e919458ad4442d5b3f43d
   m_Entries:
   - m_Id: 2198394915786752
-    m_Key: ui.main_menu
+    m_Key: ui.level_selection.label
     m_Metadata:
       m_Items: []
   - m_Id: 2203943204032512
@@ -28,7 +28,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2220970354413568
-    m_Key: ui.continue
+    m_Key: ui.level_0
     m_Metadata:
       m_Items: []
   - m_Id: 2222058625306624
@@ -85,6 +85,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7990776684875776
     m_Key: ui.back_to_main_button
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8077373115731968
+    m_Key: ui.level_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8079687771754496
+    m_Key: ui.level_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8080549881581568
+    m_Key: ui.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8080974252871680
+    m_Key: ui.main_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9046904260792320
+    m_Key: ui.level_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9047152630697984
+    m_Key: ui.level_4
     m_Metadata:
       m_Items: []
   m_Metadata:
@@ -172,6 +196,30 @@ MonoBehaviour:
           m_TableCodes:
           - hu
           - en
+        - m_KeyId: 8077373115731968
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 8079687771754496
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 8080549881581568
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 8080974252871680
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 9046904260792320
+          m_TableCodes:
+          - en
+          - hu
+        - m_KeyId: 9047152630697984
+          m_TableCodes:
+          - en
+          - hu
         m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 5475537197107249211

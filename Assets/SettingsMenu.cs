@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -32,6 +33,8 @@ public class SettingsMenu : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneManager.GetActiveScene().name.Equals("Game")) return;
+
         string[] args = Environment.GetCommandLineArgs();
         for (int i = 0; i < args.Length; i++)
         {

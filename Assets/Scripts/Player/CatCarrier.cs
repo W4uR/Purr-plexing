@@ -8,6 +8,9 @@ public class CatCarrier : MonoBehaviour
     [SerializeField]
     private AudioGroup catPickUpSoundSFX;
     [SerializeField]
+    private AudioClip levelFinishedSFX;
+
+    [SerializeField]
     private AudioSource audioSource;
 
 
@@ -17,7 +20,7 @@ public class CatCarrier : MonoBehaviour
     private string destinationTag;
 
 
-    private Cat heldCat = null;
+    private HashSet<Cat> heldCats = new HashSet<Cat>();
     private int deliveredCats = 0;
 
     private void OnEnable()
@@ -30,32 +33,46 @@ public class CatCarrier : MonoBehaviour
         LevelManager.OnLevelLoaded -= OnLevelLoaded;
     }
 
-    private void OnLevelLoaded()
+    private void OnLevelLoaded(int index)
     {
-        heldCat = null;
+        heldCats = new HashSet<Cat>();
         deliveredCats = 0;
     }
 
     void PickUpCat(Cat cat)
     {
-        heldCat = cat;
+        if (heldCats.Contains(cat)) return;
+
+        EffectDisplay.DisplayEffect(Color.green, 0.3f);
+        Debug.Log($"CatCarrier::PickUpCat | Called | heldCats.Count = {heldCats.Count}");
+        heldCats.Add(cat);
+        Debug.Log($"CatCarrier::PickUpCat | Executing | heldCats.Count = {heldCats.Count}");
         cat.transform.position = transform.position;
         cat.transform.SetParent(transform, true);
         audioSource.PlayOneShot(catPickUpSoundSFX.GetRandomClip());
+        cat.GetComponent<Scareable>().enabled = false;
     }
 
-    void DeliverHeldCat()
+    void DeliverHeldCats()
     {
-        if (heldCat == null) return;
+        Debug.Log($"CatCarrier::DeliverHeldCats | Called | heldCats.Count = {heldCats.Count}");
+        if (heldCats.Count == 0) return;
 
-        deliveredCats++;
-        Destroy(heldCat);
-        heldCat = null;
+        deliveredCats += heldCats.Count;
+        Debug.Log($"CatCarrier::DeliverHeldCats | Executing | deliveredCats.Count = {deliveredCats}");
 
+        foreach (var cat in heldCats)
+        {
+            Destroy(cat.gameObject);
+        }
+        heldCats.Clear();
+
+        Debug.Log($"CatCarrier::DeliverHeldCats | Executing | LevelManager.GetNumberOfCatsOnCurrentLevel() = {LevelManager.GetNumberOfCatsOnCurrentLevel()}");
         if (deliveredCats == LevelManager.GetNumberOfCatsOnCurrentLevel())
         {
             Debug.Log("Every cat has been saved on this level.");
-            StartCoroutine(GameManager.Instance.LevelFinished());
+            audioSource.PlayOneShot(levelFinishedSFX);
+            GameManager.Instance.LevelFinished();
         }
     }
 
@@ -64,7 +81,7 @@ public class CatCarrier : MonoBehaviour
     {
         if (other.tag.Equals(destinationTag))
         {
-            DeliverHeldCat();
+            DeliverHeldCats();
         }
         else if (other.tag.Equals(catTag))
         {

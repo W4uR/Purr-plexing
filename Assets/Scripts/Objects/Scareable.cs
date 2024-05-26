@@ -18,6 +18,8 @@ public class Scareable : MonoBehaviour
 
     public void GotScaredFrom(Vector3 source)
     {
+        if (!enabled) return;
+
         _stepsLeft = _stepsAvaliable;
         _audioSource.PlayOneShot(_scaredSFXGroup.GetRandomClip());
         FleeFrom(source);
@@ -45,4 +47,5 @@ public class Scareable : MonoBehaviour
         _stepsLeft--;
         FleeFrom(oldPosition);
     }
+
 }
