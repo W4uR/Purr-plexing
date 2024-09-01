@@ -12,12 +12,11 @@ public static class Constants
     public const string UNLOCKED_LEVELS = "Unlocked_Levels";
     public const string LANGUAGE = "Language";
     public const string MASTER_VOL = "MasterVolume";
-    public const string VOICE_VOL = "VoiceVolume";
+    public const string NARRATOR_VOL = "NarratorVolume";
     public const string BREEZE_VOL = "BreezeVolume";
-    public const string CAT_VOL = "CatVolume";
+    public const string MAPELEMENTS_VOL = "MapElementsVolume";
     public const string ENGINE_VOL = "EngineVolume";
-    public const string AMBIANCE_VOL = "AmbianceVolume";
-    public const string STEP_VOL = "StepVolume";
+    public const string PALYER_VOL = "PlayerVolume";
 
 }
 

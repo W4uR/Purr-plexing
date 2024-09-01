@@ -58,6 +58,13 @@ MonoBehaviour:
     - Locale-en
     - Locale-hu
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbb074b575921d34c98d4d9ba050b089
+    m_Address: hu_ui.placeholder
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-hu
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: c568bd778c976e344ad6b3066a960acb, type: 2}
   m_SchemaSet:

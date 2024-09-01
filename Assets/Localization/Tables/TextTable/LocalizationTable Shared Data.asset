@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3246989584633856
-    m_Key: ui.cat.slider
+    m_Key: ui.map_elements.slider
     m_Metadata:
       m_Items: []
   - m_Id: 3247221777108992
@@ -68,7 +68,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5428302387351552
-    m_Key: ui.step.slider
+    m_Key: ui.player.slider
     m_Metadata:
       m_Items: []
   - m_Id: 5431354439766016
@@ -105,6 +105,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9047179163865088
     m_Key: ui.level_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45006814332850176
+    m_Key: ui.next_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45008115326259200
+    m_Key: ui.level_complete
     m_Metadata:
       m_Items: []
   m_Metadata:

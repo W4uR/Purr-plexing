@@ -59,7 +59,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3246989584633856
-    m_Localized: Cat volume
+    m_Localized: Map elements volume
     m_Metadata:
       m_Items: []
   - m_Id: 3247221777108992
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5428302387351552
-    m_Localized: Effect volume
+    m_Localized: Player effect volume
     m_Metadata:
       m_Items: []
   - m_Id: 5431354439766016
@@ -108,6 +108,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9047179163865088
     m_Localized: Level 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45006814332850176
+    m_Localized: Next level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45008115326259200
+    m_Localized: Level Complete
     m_Metadata:
       m_Items: []
   references:

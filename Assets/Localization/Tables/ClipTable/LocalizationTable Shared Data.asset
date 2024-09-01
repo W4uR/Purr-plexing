@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5429506530086912
-    m_Key: ui.step.slider
+    m_Key: ui.player.slider
     m_Metadata:
       m_Items: []
   - m_Id: 5431421582184448
@@ -68,7 +68,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5432827785515008
-    m_Key: ui.cat.slider
+    m_Key: ui.map_elements.slider
     m_Metadata:
       m_Items: []
   - m_Id: 5433355995189248
@@ -109,6 +109,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 9047152630697984
     m_Key: ui.level_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45006794464432128
+    m_Key: ui.next_level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45008205084364800
+    m_Key: ui.level_complete
     m_Metadata:
       m_Items: []
   m_Metadata:
@@ -220,6 +228,14 @@ MonoBehaviour:
           m_TableCodes:
           - en
           - hu
+        - m_KeyId: 45006794464432128
+          m_TableCodes:
+          - hu
+          - en
+        - m_KeyId: 45008205084364800
+          m_TableCodes:
+          - hu
+          - en
         m_TypeString: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
     - rid: 5475537197107249211

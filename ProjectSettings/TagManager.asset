@@ -8,6 +8,7 @@ TagManager:
   - Cat
   - Duck Trap
   - Van
+  - Root Menu
   layers:
   - Default
   - TransparentFX

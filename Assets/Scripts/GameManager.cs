@@ -6,14 +6,11 @@ using System;
 
 public class GameManager : Singleton<GameManager>
 {
-
-    private int levelToLoad;
-    public int LevelToLoad => levelToLoad;
-
     private void Start()
     {
 
         string[] args = Environment.GetCommandLineArgs();
+        PlayerPrefs.DeleteAll();
         for (int i = 0; i < args.Length; i++)
         {
             if (args[i] == "-fresh")
@@ -24,36 +21,17 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void StartGame(int levelToLoad)
+    public async void StartGame(int levelToLoad)
     {
         Debug.Log("Starting game...");
-        this.levelToLoad = levelToLoad;
-        SceneManager.LoadScene("Game");
+        await SceneManager.LoadSceneAsync("Game");
+        LevelManager.LoadLevel(levelToLoad);
+
     }
 
-
-
-    public void LevelFinished()
+    internal void LevelFinished()
     {
-        StartCoroutine(LevelFinishedCorutine());
-    }
-
-    public IEnumerator LevelFinishedCorutine()
-    {
-        Debug.Log("GameManager::LevelFinished");
-
-        if(levelToLoad == 0)//We are in the tutorial
-        {
-            yield return new WaitForSeconds(2f);
-            yield return StartCoroutine(Tutorial.LevelFinished());
-        }
-
-
-        levelToLoad++;
-        yield return new WaitForSeconds(1); // Wait for player to finish moving Or else the end of movement teleport overwrites the teleport to spawnpoint
-        if (LevelManager.GetNumberOfLevels() > levelToLoad)
-            LevelManager.LoadLevel(levelToLoad);
-        else
-            SceneManager.LoadScene("Menu");
+        // Pause game
+        // Show level finished canvas.
     }
 }
