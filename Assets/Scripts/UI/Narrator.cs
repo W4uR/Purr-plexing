@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -30,43 +31,41 @@ public class Narrator : MonoBehaviour
     private void OnDisable()
     {
         GamePauser.PausedChanged -= OnPauseChanged;
-
     }
 
-    public static IEnumerator PlayAudioClip(string key)
+    static Awaitable narration;
+
+    public static async Awaitable PlayAudioClip(string key)
     {
+        
+        var clipTask = LocalizationSettings.AssetDatabase.GetLocalizedAssetAsync<AudioClip>(TABLE_NAME, key);
+        var textTask = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(TABLE_NAME, key);
 
-        AudioClip clip = LocalizationSettings.AssetDatabase.GetLocalizedAsset<AudioClip>(TABLE_NAME, key);
-        if(clip == null)
+        var clip = clipTask.WaitForCompletion();
+
+        if (clipTask.Result == null)
         {
-            Debug.LogError("No key in table");
-            yield break;
+            Debug.LogError("No key in Asset table");
+            return;
         }
-        while (GamePauser.IsPaused)
+
+        var subtitle =  textTask.WaitForCompletion();
+        if (textTask.Result == null)
         {
-            Debug.Log("The Game is Paused");
-            yield return null;
+            Debug.LogError("No key in String table");
+            return;
         }
+
         s_instance.speaker.clip = clip;
-        var timeleft = clip.length;
-
-
         s_instance.speaker.Play();
-        s_instance.subtitleArea.text = LocalizationSettings.StringDatabase.GetLocalizedString(TABLE_NAME, key);
-        while(timeleft >= 0f)
-        {
-            timeleft -= Time.deltaTime;
-            while (GamePauser.IsPaused)
-            {
-                Debug.Log("The Game is Paused");
-                yield return null;
-            }
-            yield return new WaitForEndOfFrame();
-        }
-        s_instance.speaker.clip = null;
+
+        s_instance.subtitleArea.text = subtitle;
+
+        await Awaitable.WaitForSecondsAsync(clip.length);
     }
     public static void Clear()
     {
+        s_instance.speaker.clip = null;
         s_instance.subtitleArea.text = "";
     }
 

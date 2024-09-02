@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization.Events;

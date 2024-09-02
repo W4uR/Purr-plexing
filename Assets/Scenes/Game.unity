@@ -358,10 +358,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
-    m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 3162778711066411893}
+    m_SelectOnDown: {fileID: 343743482}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -453,8 +453,8 @@ Transform:
   - {fileID: 240527801}
   - {fileID: 2055382207}
   - {fileID: 1236215342}
-  - {fileID: 3618726673208482906}
   - {fileID: 593380176}
+  - {fileID: 3618726673208482906}
   - {fileID: 981819654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -830,10 +830,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
-    m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 19177761}
+    m_SelectOnDown: {fileID: 3162778711066411893}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -2324,7 +2324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 3841913137791241985}
-  settingsMenu: {fileID: 0}
+  settingsMenu: {fileID: 981819655}
 --- !u!4 &874667337
 Transform:
   m_ObjectHideFlags: 0
@@ -2707,6 +2707,11 @@ PrefabInstance:
 --- !u!224 &981819654 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3471370567302599428, guid: 588f306b2f0c28345b74d5d24de5df6a, type: 3}
+  m_PrefabInstance: {fileID: 981819653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &981819655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2187541738826026049, guid: 588f306b2f0c28345b74d5d24de5df6a, type: 3}
   m_PrefabInstance: {fileID: 981819653}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &991114302
@@ -4504,10 +4509,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
-    m_WrapAround: 1
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 343743482}
+    m_SelectOnDown: {fileID: 19177761}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -5225,7 +5230,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &8247425941897943400
 MonoBehaviour:
   m_ObjectHideFlags: 0

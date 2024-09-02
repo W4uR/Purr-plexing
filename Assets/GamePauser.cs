@@ -17,6 +17,11 @@ public class GamePauser : MonoBehaviour
         set
         {
             isPaused = value;
+            if (isPaused)
+                Time.timeScale = 0f;
+            else
+                Time.timeScale = 1f;
+            
             if (PausedChanged != null)
                 PausedChanged.Invoke(value);
         }
