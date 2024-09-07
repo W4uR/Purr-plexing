@@ -17,25 +17,6 @@ public class Tutorial : MonoBehaviour
     }
 
 
-    private Bindings bindings;
-
-    private void Awake()
-    {
-        bindings = new Bindings();
-    }
-
-    private void OnEnable()
-    {
-        bindings.Player.MoveForward.performed += CheckWallBump;
-        bindings.Player.MoveForward.Enable();
-    }
-
-    private void OnDisable()
-    {
-        bindings.Player.MoveForward.performed -= CheckWallBump;
-        bindings.Player.MoveForward.Disable();
-    }
-
     Coroutine wallDialog = null;
     bool moveTutorial = false;
     void CheckWallBump(InputAction.CallbackContext context)

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem.UI;
 
 public class GamePauser : MonoBehaviour
 {
@@ -9,19 +11,42 @@ public class GamePauser : MonoBehaviour
     private GameObject pauseMenu;
     [SerializeField]
     private GameObject settingsMenu;
+    [SerializeField]
+    private InputSystemUIInputModule UIInputModule;
 
-    private static bool isPaused;
-    public static bool IsPaused
+    public List<MonoBehaviour> componentsToDisableOnPause;
+
+    public static GamePauser Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+        componentsToDisableOnPause = new();
+    }
+
+    private bool isPaused;
+    public bool IsPaused
     {
         get { return isPaused; }
         set
         {
             isPaused = value;
             if (isPaused)
+            {
                 Time.timeScale = 0f;
+
+            }
             else
+            {
                 Time.timeScale = 1f;
-            
+
+            }
+            UIInputModule.enabled = isPaused;
+            foreach (var component in componentsToDisableOnPause)
+            {
+                component.enabled = !IsPaused;
+            }
+
             if (PausedChanged != null)
                 PausedChanged.Invoke(value);
         }
