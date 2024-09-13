@@ -276,6 +276,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4536786280786286441, guid: c696607605bb0ff4ca28615ba62f35e4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536786280786286441, guid: c696607605bb0ff4ca28615ba62f35e4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4536786280786286441, guid: c696607605bb0ff4ca28615ba62f35e4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6836474202132572109, guid: c696607605bb0ff4ca28615ba62f35e4, type: 3}
       propertyPath: m_Name
       value: Player Prefab

@@ -12,6 +12,8 @@ public class PlayerMovement : DisableOnPause
     float turnSpeed = 180f;
     [SerializeField]
     AudioSource feetAudioSource;
+    [SerializeField]
+    LayerMask wallMask;
 
     private bool isMoving;
     private bool isTurning;
@@ -33,48 +35,12 @@ public class PlayerMovement : DisableOnPause
     private void OnEnable()
     {
         inputActions.Enable();
-        //inputActions.Player.Move.performed += OnMovementInput;
     }
 
 
     private void OnDisable()
     {
-        //inputActions.Player.Move.performed -= OnMovementInput;
         inputActions.Disable();
-    }
-
-    // Use this for supporting NOT holding input keys.
-    private void OnMovementInput(InputAction.CallbackContext context)
-    {
-        if (isMoving || isTurning) return;
-        
-        inputVector = context.ReadValue<Vector2>();
-        
-        if (inputVector.y > 0f)
-        {
-            isMoving = true;
-            targetPosition = (transform.position + transform.forward).RoundXZ();
-            Debug.Log("Target Position: " +targetPosition.ToString("F10"));
-            startPosition = transform.position;
-        }
-        else if (inputVector.y < 0f)
-        {
-            isMoving = true;
-            targetPosition = (transform.position - transform.forward).RoundXZ();
-            startPosition = transform.position;
-        }
-        else if (inputVector.x > 0f)
-        {
-            isTurning = true;
-            targetRotation = Quaternion.Euler(0f, RelativeDirection.RIGHT.toRotationAngle(), 0f) * transform.rotation;
-            startRotation = transform.rotation;
-        }
-        else if (inputVector.x < 0f)
-        {
-            isTurning = true;
-            targetRotation = Quaternion.Euler(0f, RelativeDirection.LEFT.toRotationAngle(), 0f) * transform.rotation;
-            startRotation = transform.rotation;
-        }
     }
 
     // Update is called once per frame
@@ -93,28 +59,33 @@ public class PlayerMovement : DisableOnPause
 
         if (inputVector.y > 0f)
         {
-            isMoving = true;
             targetPosition = (transform.position + transform.forward).RoundXZ();
-            Debug.Log("Target Position: " + targetPosition.ToString("F10"));
             startPosition = transform.position;
+            if (Physics.Raycast(startPosition, targetPosition - startPosition, 1f,wallMask) == false)
+            {
+                isMoving = true;
+            }
         }
         else if (inputVector.y < 0f)
         {
-            isMoving = true;
             targetPosition = (transform.position - transform.forward).RoundXZ();
             startPosition = transform.position;
+            if (Physics.Raycast(startPosition, targetPosition - startPosition, 1f, wallMask) == false)
+            {
+                isMoving = true;
+            }
         }
         else if (inputVector.x > 0f)
         {
-            isTurning = true;
             targetRotation = Quaternion.Euler(0f, RelativeDirection.RIGHT.toRotationAngle(), 0f) * transform.rotation;
             startRotation = transform.rotation;
+            isTurning = true;
         }
         else if (inputVector.x < 0f)
         {
-            isTurning = true;
             targetRotation = Quaternion.Euler(0f, RelativeDirection.LEFT.toRotationAngle(), 0f) * transform.rotation;
             startRotation = transform.rotation;
+            isTurning = true;
         }
     }
 
@@ -144,4 +115,6 @@ public class PlayerMovement : DisableOnPause
             return;
         }
     }
+
+
 }

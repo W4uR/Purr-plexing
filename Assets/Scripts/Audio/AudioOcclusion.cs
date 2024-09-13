@@ -24,7 +24,7 @@ public class AudioOcclusion : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         lowPassFilter = GetComponent<AudioLowPassFilter>();
-        _listener = Camera.main.transform;
+        _listener = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void FixedUpdate()
